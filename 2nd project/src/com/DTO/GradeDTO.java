@@ -9,6 +9,18 @@ public class GradeDTO {
 	private float grade;	//영화 평점
 	private String note;	//영화 한줄평
 	
+	public GradeDTO(int no, String id, String movieNm, float grade) {
+		this.no = no;
+		this.id = id;
+		this.movieNm = movieNm;
+		this.grade = grade;
+	}
+	public GradeDTO(int no, String id, String movieNm, String note) {
+		this.no = no;
+		this.id = id;
+		this.movieNm = movieNm;
+		this.note = note;
+	}
 	public int getNo() {
 		return no;
 	}
