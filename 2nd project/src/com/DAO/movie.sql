@@ -5,6 +5,7 @@ drop table movie_grade;
 drop sequence movie_seq;
 drop sequence screen_seq;
 
+
 -- 테이블 생성
 create table movie(
 movie_no number primary key,
