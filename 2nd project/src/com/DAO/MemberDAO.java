@@ -16,26 +16,18 @@ public class MemberDAO {
 	ResultSet rs = null;
 	int cnt = 0;
 
-	private void getConn() { // 접속
-		try {
-			InputStream in = getClass().getResourceAsStream("../../../../db.properties");
-			// 외부 파일을 읽어들여오는 코드 (DAO.class파일을 기준으로)
-			Properties p = new Properties();
-			// Properties확장자 파일을 읽기 위해서 객체 생성
-			p.load(in);
-			// 읽어들여온 파일을 Properties객체로 로드
-			Class.forName(p.getProperty("dbclass"));
-			String url = p.getProperty("dburl");
-			String dbid = p.getProperty("dbid");
-			String dbpw = p.getProperty("dbpw");
+	private void getConn() {
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String dbid = "hr";
+		String dbpw = "hr";
 
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, dbid, dbpw);
-			if (conn != null) {
-				System.out.println("연결 성공");
-			} else {
-				System.out.println("연결 실패");
-			}
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -52,6 +44,21 @@ public class MemberDAO {
 		} catch (Exception e2) {
 			e2.printStackTrace();
 		}
+	}
+
+	
+	public int setMember(String genre) {
+		getConn();
+		String sql = "insert into MOVIE_MEMBER values (screen_seq.nextval, screen_seq.nextval, screen_seq.nextval, ?)";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, genre);
+			cnt = pst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cnt;
 	}
 
 	public int Join(MemberDTO dto) {
