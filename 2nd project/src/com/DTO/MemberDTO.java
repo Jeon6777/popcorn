@@ -8,6 +8,20 @@ public class MemberDTO {
 	private String genre;	//사용자 취향 : 장르
 	
 	
+	public MemberDTO(String id, String pw, String nick, String genre) {
+		this.id = id;
+		this.pw = pw;
+		this.nick = nick;
+		this.genre = genre;
+	}
+	
+	
+	public MemberDTO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+
+
 	public String getId() {
 		return id;
 	}
