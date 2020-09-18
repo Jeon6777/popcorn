@@ -24,7 +24,7 @@
 				<%	if(info == null){%>
 					<a href="#menu2">로그인</a>
 				<% }else{ %>
-					<a href="#menu2">로그아웃</a>	
+					<a href="LogoutService.do">로그아웃</a>	
 				<% } %>
 				<a href="#menu">Menu</a>
 			</header>
