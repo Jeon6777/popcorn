@@ -113,4 +113,24 @@ public class GradeDAO {
 		return cnt;
 	
 	}
+	
+	public float getGrade(GradeDTO dto) { // 평점 가져오기 , id와 movienm dto로 가져오기
+		getConn();
+		float grade = 0;
+		String sql = "select grade from movie_grade where id like ? and movienm like ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getId());
+			pst.setString(2, dto.getMovieNm());
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				grade = rs.getFloat(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}return grade;
+		
+	}
 }
