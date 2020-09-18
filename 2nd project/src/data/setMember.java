@@ -12,7 +12,7 @@ import com.DAO.MemberDAO;
 public class setMember {
 
 	public static void main(String[] args) {
-		ArrayList<String[]> list = run("C:/Users/SMT058/Desktop/영화별점.csv", "euc-kr");
+		ArrayList<String[]> list = run("C:\\Users\\SMT005\\Desktop\\영화별점.csv", "euc-kr");
 		MemberDAO dao = new MemberDAO();
 		
 		for (int i = 0; i < list.size(); i++) {

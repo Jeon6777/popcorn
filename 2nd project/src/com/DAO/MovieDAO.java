@@ -64,27 +64,6 @@ public class MovieDAO {
 		return cnt;
 		
 	}
-	
-	//검색시 해당 문자가 포함된 영화 이름 모두 반환
-	public ArrayList<String> search_movieNm(String search) {
-		getConn();
-		ArrayList<String> list = new ArrayList<String>();
-		String sql = "select movienm from movie where movienm like ?";
-		try {
-			pst = conn.prepareStatement(sql);
-			pst.setString(1, search);
-			rs = pst.executeQuery();
-			while(rs.next()) {
-				String movieNm = rs.getString(1);
-				list.add(movieNm);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}return list;
-		
-	}
 
 	
 	private void getConn() {

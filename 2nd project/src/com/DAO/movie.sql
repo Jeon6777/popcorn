@@ -1,3 +1,4 @@
+
 drop table movie;
 drop table screen;
 drop table movie_member;
@@ -9,6 +10,7 @@ drop sequence grade_seq;
 drop sequence note_seq;
 
 -- 테이블 생성
+-- 영화 테이블 생성
 create table movie(
 movie_no number primary key,
 movieNm varchar2(100),
@@ -19,6 +21,7 @@ openDt varchar2(50),
 img varchar2(500)
 );
 
+-- 상영작 테이블 생성
 create table screen(
 movie_no number primary key,
 movieNm varchar2(100),
@@ -29,6 +32,7 @@ openDt varchar2(50),
 img varchar2(500)
 );
 
+-- 회원 테이블 생성
 create table movie_member(
 id varchar2(50) primary key,
 pw varchar2(50),
@@ -36,14 +40,15 @@ nick varchar2(50),
 genre varchar2(100)
 );
 
+-- 평점 테이블 생성
 create table movie_grade(
 grade_no number primary key,
 id varchar2(50),
 movienm varchar2(100),
-grade number,
-note varchar2(200)
+grade number
 );
 
+-- 영화 테이블 생성
 create table movie_note(
 note_no number primary key,
 id varchar2(50),
@@ -80,3 +85,16 @@ select * from MOVIE_GRADE;
 select * from MOVIE_NOTE;
 
 
+--------------------------------------------------------------------------------------------------------------------------------------
+drop table movie_member;
+
+create table movie_member(
+	id varchar2(100),
+	pw varchar2(100)
+	
+);
+
+select * from movie_member;
+
+insert into movie_member values('asdf','123');
+insert into movie_member values('qwe','qwe');

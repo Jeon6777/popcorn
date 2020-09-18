@@ -66,7 +66,7 @@ public class MemberDAO {
 		try {
 			getConn();
 
-			String sql = "insert movie_member into values(?,?,?,?)"; // 테이블 이름 작성
+			String sql = "insert into movie_member values(?,?,?,?)"; // 테이블 이름 작성
 			pst = conn.prepareStatement(sql);
 
 			pst.setString(1, dto.getId());
