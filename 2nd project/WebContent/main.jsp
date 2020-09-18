@@ -21,7 +21,11 @@
 		<!-- Header -->
 			<header id="header" class="alt">
 				<h1><a href="main.jsp">pop <span>('corn')</span></a></h1>
-				<a href="#menu2">Login</a>
+				<%	if(info == null){%>
+					<a href="#menu2">로그인</a>
+				<% }else{ %>
+					<a href="#menu2">로그아웃</a>	
+				<% } %>
 				<a href="#menu">Menu</a>
 			</header>
 
