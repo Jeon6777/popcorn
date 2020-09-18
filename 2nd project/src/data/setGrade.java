@@ -11,7 +11,7 @@ import com.DAO.GradeDAO;
 import com.DAO.MemberDAO;
 import com.DTO.GradeDTO;
 
-public class setGenre {
+public class setGrade {
 
 	public static void main(String[] args) {
 		GradeDAO dao = new GradeDAO();
