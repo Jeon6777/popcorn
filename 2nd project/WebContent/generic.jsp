@@ -17,14 +17,14 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<h1><a href="index.jsp">pop <span>('corn')</span></a></h1>
+				<h1><a href="main.jsp">pop <span>('corn')</span></a></h1>
 				<a href="#menu">Menu</a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.jsp">Home</a></li>
+					<li><a href="main.jsp">Home</a></li>
 					<li><a href="generic.jsp">Generic</a></li>
 					<li><a href="elements.jsp">Elements</a></li>
 				</ul>

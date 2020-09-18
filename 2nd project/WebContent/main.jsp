@@ -20,7 +20,7 @@
 	%>
 		<!-- Header -->
 			<header id="header" class="alt">
-				<h1><a href="index.jsp">pop <span>('corn')</span></a></h1>
+				<h1><a href="main.jsp">pop <span>('corn')</span></a></h1>
 				<a href="#menu2">Login</a>
 				<a href="#menu">Menu</a>
 			</header>
@@ -28,7 +28,7 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.jsp">Home</a></li>
+					<li><a href="main.jsp">Home</a></li>
 					<li><a href="generic.jsp">Generic</a></li>
 					<li><a href="elements.jsp">Elements</a></li>
 				</ul>
@@ -36,15 +36,15 @@
 			<nav id="menu2">	
 				<ul class="links">
 					<li><h5>로그인</h5></li>
-						<form action="Loginservice" method="post">
-							<li><input type="text"  placeholder="ID를 입력해주세요"></li>
-							<li><input type="password"  placeholder="PW을 입력해주세요"></li>
+						<form action="LoginService.do" method="post">
+							<li><input name="id" type="text"  placeholder="ID를 입력해주세요"></li>
+							<li><input name="pw" type="password"  placeholder="PW을 입력해주세요"></li>
 							<li><input type="submit" value="LogIn" class="button fit"></li>
 						</form>
 				</ul>
 				<ul class="actions vertical">
 					<li><h5>회원가입</h5></li>
-						<form action="JoinService" method="post">
+						<form action="JoinService.do" method="post">
 							<li><input name="id" type="text"  placeholder="ID를 입력해주세요"></li>
 							<li><input name="pw" type="password"  placeholder="PW을 입력해주세요"></li>
 							<li><input name="nick" type="text"  placeholder="NICK을 입력해주세요"></li>

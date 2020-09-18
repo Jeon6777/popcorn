@@ -11,34 +11,39 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.DAO.MemberDAO;
 import com.DTO.MemberDTO;
+import com.front.Command;
 import com.sun.corba.se.pept.transport.Connection;
 
-@WebServlet("/JoinService")
-public class JoinService extends HttpServlet {
+public class JoinService implements Command{
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String nick = request.getParameter("nick");
-		String genre = request.getParameter("genre");
-		
-		
-		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = new MemberDTO(id, pw, nick, genre);
-		int cnt = dao.Join(dto);
+
+	@Override
+	public String execut(HttpServletRequest request, HttpServletResponse response) {
+		//회원가입
 			
-		if(cnt>0) {
-			response.sendRedirect("index.jsp");
-		}else {
-			System.out.println("가입실패");
-			response.sendRedirect("index.jsp");
-		}
-		
-		
+				
+				String id = request.getParameter("id");
+				String pw = request.getParameter("pw");
+				String nick = request.getParameter("nick");
+				String genre = request.getParameter("genre");
+				
+				MemberDTO dto = new MemberDTO(id, pw, nick, genre);
+				
+				MemberDAO dao = new MemberDAO();
+				int cnt = dao.Join(dto);
+				
+				if(cnt>0) {
+					System.out.println("회원가입 성공");
+				}else {
+					System.out.println("회원가입 실패");
+				}
+				
+				
+				return "index.jsp";
 	}
+
 	
-	
+
 	
 
 }
