@@ -6,6 +6,7 @@ drop table movie_note;
 drop sequence movie_seq;
 drop sequence screen_seq;
 drop sequence grade_seq;
+drop sequence note_seq;
 
 -- 테이블 생성
 create table movie(
@@ -76,5 +77,6 @@ select * from screen;
 select * from movie;
 select * from MOVIE_MEMBER;
 select * from MOVIE_GRADE;
+select * from MOVIE_NOTE;
 
 
