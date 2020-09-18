@@ -18,12 +18,13 @@
 	<body class="is-preload ">
 	<% MemberDTO info =  (MemberDTO)session.getAttribute("info"); 
 	%>
-		<!-- Header -->
+	<!-- Header -->
 			<header id="header" class="alt">
 				<h1><a href="main.jsp">pop <span>('corn')</span></a></h1>
 				<%	if(info == null){%>
 					<a href="#menu2">로그인</a>
 				<% }else{ %>
+					<a href="#menu3">정보 수정</a>	
 					<a href="LogoutService.do">로그아웃</a>	
 				<% } %>
 				<a href="#menu">Menu</a>
@@ -57,6 +58,20 @@
 						</form>
 				</ul>
 			</nav>
+				<%	if(info != null){%>
+			<nav id = "menu3">
+				<ul class="links">
+					<li><h5>정보수정</h5></li>
+						<form action="UpdateService.do" method="post">
+							<li><input name="pw" type="password"  placeholder="비밀번호 입력"></li>
+							<!--<li><input name="pwCk" type="password"  placeholder="비밀번호 확인 입력"></li>  -->
+							<li><input name="nick" type="text"  placeholder="닉네임을 입력해주세요"></li>
+							<li><input name="genre" type="text"  placeholder="장르 나중에 체크박스로 만들기"></li>
+							<li><input type="submit" value="정보 수정" class="button fit"></li>
+						</form>
+				</ul>
+			</nav>
+			<% } %>
 			<!-- Banner -->
 			<!--
 				비디오를 배경으로 사용하려면 데이터 비디오를 비디오 이름으로 설정하십시오.
