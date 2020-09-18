@@ -17,6 +17,8 @@ public class MovieDAO {
 	
 	
 	//테이블명 입력시(상영작 screen, 영화 movie) 영화이름 전체출력
+	
+	
 	public ArrayList<String> movieNmAll(String DB_tableName) {
 		ArrayList<String> name = new ArrayList<String>();
 		getConn();
