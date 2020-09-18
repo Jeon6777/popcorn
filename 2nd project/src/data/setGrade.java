@@ -15,7 +15,7 @@ public class setGrade {
 
 	public static void main(String[] args) {
 		GradeDAO dao = new GradeDAO();
-		//1, '1000','뺑반',4.5);
+		// 1, '1000','뺑반',4.5);
 //		GradeDTO dto1 = new GradeDTO("1000", "뺑반", 3.5f);
 //		GradeDTO dto1 = new GradeDTO("1001", "뺑반", 5);
 //		int cnt = dao.setGrade(dto1);
@@ -24,31 +24,39 @@ public class setGrade {
 //		}else {
 //			System.out.println("평점 넣기 실패");
 //		}
-		//dao.checkGrade(dto1);
-		
-		
+		// dao.checkGrade(dto1);
+
 		ArrayList<String[]> list = run("C:/Users/SMT058/Desktop/영화별점.csv", "euc-kr");
-		
-			try {
-				for (int i = 1; i <list.size(); i++) {
-					String id = i+"";
-					for (int j = 1; j < list.get(i).length; j++) {
-						String movieNm = list.get(0)[j];
-						float grade = Integer.parseInt(list.get(i)[j]);
-						//System.out.println("set평점출력 : "+grade);
+
+		try {
+			for (int i = 1; i < list.size(); i++) {
+				// System.out.println("영화갯수: "+list.get(0).length);
+				String id = i + "";
+				for (int j = 1; j < list.get(i).length; j++) {
+					String movieNm = list.get(0)[j];
+					System.out.println("영화이름 : " + movieNm);
+					System.out.println(i + "행" + j + "열 : " + list.get(i)[j] + "점");
+
+					if (!list.get(i)[j].equals("")) {
+
+						float grade = Float.valueOf(list.get(i)[j]);
+
+						// System.out.println("set평점출력 : "+grade);
 						GradeDTO dto = new GradeDTO(id, movieNm, grade);
 						Thread.sleep(1000);
 						int cnt = dao.setGrade(dto);
-						if(cnt>0) {
+						if (cnt > 0) {
 							System.out.println("평점 넣기 성공!");
-						}else {
+						} else {
 							System.out.println("평점 넣기 실패");
 						}
 					}
+
 				}
-			}catch (Exception e) {
-				e.printStackTrace();
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static ArrayList<String[]> run(String path, String encoding) {

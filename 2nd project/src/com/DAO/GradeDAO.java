@@ -64,14 +64,14 @@ public class GradeDAO {
 				float grade = rs.getFloat(2);
 				search_dto = new GradeDTO(grade_no, dto.getId(), dto.getMovieNm(), grade);
 
-				System.out.println("DB 평점 : " + grade);
+				//System.out.println("DB 평점 : " + grade);
 
 			}else {
 				search_dto = null;
-				System.out.println("평점 존재하지 않음");
+				//System.out.println("평점 존재하지 않음");
 			}
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return search_dto;
@@ -105,13 +105,12 @@ public class GradeDAO {
 
 			cnt = pst.executeUpdate();
 
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
 		return cnt;
-	
 	}
 	
 	public float getGrade(GradeDTO dto) { // 평점 가져오기 , id와 movienm dto로 가져오기
@@ -126,7 +125,7 @@ public class GradeDAO {
 			if(rs.next()) {
 				grade = rs.getFloat(1);
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			close();
