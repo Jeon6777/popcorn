@@ -2,25 +2,29 @@ package com.DTO;
 
 public class GradeDTO {
 	
-	//no, id, movienm, grade, note
+	//no, id, movienm, grade
 	private int no;	//평점 번호 시퀀스 사용
 	private String id;	//회원 ID
 	private String movieNm;	//영화 이름
 	private float grade;	//영화 평점
-	private String note;	//영화 한줄평
 	
+	public GradeDTO(String id, String movieNm, float grade) {
+		this.id = id;
+		this.movieNm = movieNm;
+		this.grade = grade;
+	}
 	public GradeDTO(int no, String id, String movieNm, float grade) {
 		this.no = no;
 		this.id = id;
 		this.movieNm = movieNm;
 		this.grade = grade;
 	}
-	public GradeDTO(int no, String id, String movieNm, String note) {
+	public GradeDTO(int no, String id, String movieNm) {
 		this.no = no;
 		this.id = id;
 		this.movieNm = movieNm;
-		this.note = note;
 	}
+	
 	public int getNo() {
 		return no;
 	}
@@ -44,12 +48,6 @@ public class GradeDTO {
 	}
 	public void setGrade(float grade) {
 		this.grade = grade;
-	}
-	public String getNote() {
-		return note;
-	}
-	public void setNote(String note) {
-		this.note = note;
 	}
 	
 

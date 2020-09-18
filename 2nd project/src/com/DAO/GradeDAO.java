@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
+
+import com.DTO.GradeDTO;
 
 public class GradeDAO {
 	Connection conn = null;
@@ -13,26 +16,18 @@ public class GradeDAO {
 	ResultSet rs = null;
 	int cnt = 0;
 
-	private void getConn() { // 접속
-		try {
-			InputStream in = getClass().getResourceAsStream("../../../../db.properties");
-			// 외부 파일을 읽어들여오는 코드 (DAO.class파일을 기준으로)
-			Properties p = new Properties();
-			// Properties확장자 파일을 읽기 위해서 객체 생성
-			p.load(in);
-			// 읽어들여온 파일을 Properties객체로 로드
-			Class.forName(p.getProperty("dbclass"));
-			String url = p.getProperty("dburl");
-			String dbid = p.getProperty("dbid");
-			String dbpw = p.getProperty("dbpw");
+	private void getConn() {
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String dbid = "hr";
+		String dbpw = "hr";
 
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, dbid, dbpw);
-			if (conn != null) {
-				System.out.println("연결 성공");
-			} else {
-				System.out.println("연결 실패");
-			}
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -43,11 +38,79 @@ public class GradeDAO {
 			if (pst != null) {
 				pst.close();
 			}
+			if (rs != null) {
+				rs.close();
+			}
 			if (conn != null) {
 				conn.close();
 			}
 		} catch (Exception e2) {
 			e2.printStackTrace();
 		}
+	}
+
+	// 평점 매겼는지 안매겼는지 확인 기능 dto ==null : insert / !=null : update
+	public GradeDTO checkGrade(GradeDTO dto) {
+		getConn();
+		GradeDTO search_dto = null;
+		String sql = "select grade_no, grade from movie_grade where movienm like ? and id like ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getMovieNm());
+			pst.setString(2, dto.getId());
+			rs = pst.executeQuery();
+			if (rs.next()) { // 평점이 존재 하는 경우
+				int grade_no = rs.getInt(1);
+				float grade = rs.getFloat(2);
+				search_dto = new GradeDTO(grade_no, dto.getId(), dto.getMovieNm(), grade);
+
+				System.out.println("DB 평점 : " + grade);
+
+			}else {
+				search_dto = null;
+				System.out.println("평점 존재하지 않음");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return search_dto;
+	}
+
+	public int setGrade(GradeDTO dto) {// 영화 평점 작성 DB에 저장
+		getConn();
+		GradeDTO search_dto = checkGrade(dto);
+		String sql = "";
+		try {
+			// 평점이 없는 경우
+			if (search_dto == null) {
+				sql = "insert into movie_grade values(grade_seq.nextval, ?, ?, ?)";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, dto.getId());
+				pst.setString(2, dto.getMovieNm());
+				pst.setFloat(3, dto.getGrade());
+				
+			} else { // 평점이 있는 경우
+//				System.out.println("평점 있는경우 점수 : " + dto.getGrade());
+//				System.out.println("아이디"+dto.getId());
+//				System.out.println("무비 이름 "+dto.getMovieNm());
+				
+				sql = "update movie_grade set grade = ? where movienm like ? and id like ?";
+								
+				pst = conn.prepareStatement(sql);
+				pst.setFloat(1, dto.getGrade());
+				pst.setString(2, dto.getMovieNm());
+				pst.setString(3, dto.getId());
+			}
+
+			cnt = pst.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	
 	}
 }
