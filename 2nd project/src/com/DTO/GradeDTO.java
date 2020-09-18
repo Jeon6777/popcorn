@@ -24,7 +24,10 @@ public class GradeDTO {
 		this.id = id;
 		this.movieNm = movieNm;
 	}
-	
+	public GradeDTO(String id, String movieNm) {
+		this.id = id;
+		this.movieNm = movieNm;
+	}
 	public int getNo() {
 		return no;
 	}
