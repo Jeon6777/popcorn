@@ -40,8 +40,7 @@ create table movie_grade(
 grade_no number primary key,
 id varchar2(50),
 movienm varchar2(100),
-grade number,
-note varchar2(200)
+grade number
 );
 
 create table movie_note(
