@@ -34,6 +34,7 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="main.jsp">Home</a></li>
+					<li><a href="myPage.jsp">My Page</a></li>
 					<li><a href="generic.jsp">Generic</a></li>
 					<li><a href="elements.jsp">Elements</a></li>
 				</ul>

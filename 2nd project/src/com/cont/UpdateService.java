@@ -19,8 +19,15 @@ public class UpdateService implements Command {
 		String id = info.getId();
 		String pw = request.getParameter("pw");
 		String nick = request.getParameter("nick");
-		String genre = request.getParameter("genre");
-		MemberDTO dto = new MemberDTO(id, pw, nick, genre);
+		String[] genre = request.getParameterValues("genre");
+		String genres = "";
+		for (int i = 0; i < genre.length; i++) {
+			genres += genre[i];
+			if(i < genre.length-1) {
+				genres += "|";				
+			}
+		}
+		MemberDTO dto = new MemberDTO(id, pw, nick, genres);
 		MemberDAO dao = new MemberDAO();
 		int cnt =  dao.update(dto);
 		
@@ -31,7 +38,7 @@ public class UpdateService implements Command {
 			System.out.println("회원정보 수정 실패");
 		}
 		
-		return "main.jsp";
+		return "myPage.jsp";
 	}
 
 }
