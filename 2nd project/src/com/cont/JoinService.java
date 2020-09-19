@@ -25,10 +25,20 @@ public class JoinService implements Command{
 				String id = request.getParameter("id");
 				String pw = request.getParameter("pw");
 				String nick = request.getParameter("nick");
-				String genre = request.getParameter("genre");
+				String[] genre = request.getParameterValues("genre");
+				String genres = "";
+				for (int i = 0; i < genre.length; i++) {
+					genres += genre[i];
+					if(i < genre.length-1) {
+						genres += "|";				
+					}
+				}
+				System.out.println("id : "+ id);
+				System.out.println("pw : "+ pw);
+				System.out.println("nick : "+ nick);
+				System.out.println("genre : "+ genre);
 				
-				MemberDTO dto = new MemberDTO(id, pw, nick, genre);
-				
+				MemberDTO dto = new MemberDTO(id, pw, nick, genres);
 				MemberDAO dao = new MemberDAO();
 				int cnt = dao.Join(dto);
 				
@@ -39,7 +49,7 @@ public class JoinService implements Command{
 				}
 				
 				
-				return "index.jsp";
+				return "main.jsp";
 	}
 
 	

@@ -23,8 +23,8 @@
 				<h1><a href="main.jsp">pop <span>('corn')</span></a></h1>
 				<%	if(info == null){%>
 					<a href="#menu2">로그인</a>
+					<a href="#menu3">회원가입</a>	
 				<% }else{ %>
-					<a href="#menu3">정보 수정</a>	
 					<a href="LogoutService.do">로그아웃</a>	
 				<% } %>
 				<a href="#menu">Menu</a>
@@ -48,31 +48,50 @@
 							<li><input type="submit" value="LogIn" class="button fit"></li>
 						</form>
 				</ul>
-				<ul class="actions vertical">
-					<li><h5>회원가입</h5></li>
-						<form action="JoinService.do" method="post">
-							<li><input name="id" type="text"  placeholder="ID를 입력해주세요"></li>
-							<li><input name="pw" type="password"  placeholder="PW을 입력해주세요"></li>
-							<li><input name="nick" type="text"  placeholder="NICK을 입력해주세요"></li>
-							<li><input name="genre" type="text"  placeholder="장르1개만 입력해주세요(예시 :액션)"></li>
-							<li><input type="submit" value="JoinUs" class="button fit"></li>
-						</form>
-				</ul>
 			</nav>
-				<%	if(info != null){%>
+				
 			<nav id = "menu3">
-				<ul class="links">
-					<li><h5>정보수정</h5></li>
-						<form action="UpdateService.do" method="post">
-							<li><input name="pw" type="password"  placeholder="비밀번호 입력"></li>
-							<!--<li><input name="pwCk" type="password"  placeholder="비밀번호 확인 입력"></li>  -->
-							<li><input name="nick" type="text"  placeholder="닉네임을 입력해주세요"></li>
-							<li><input name="genre" type="text"  placeholder="장르 나중에 체크박스로 만들기"></li>
-							<li><input type="submit" value="정보 수정" class="button fit"></li>
-						</form>
-				</ul>
+				<div class="inner">
+				<div class="inner">
+					<ul class="actions vertical" style="width: 40.5em;">
+						<li><h5>회원가입</h5></li>
+						<ul>
+							<form action="JoinService.do" method="post" autocomplete="off">
+								<li><input name="id" type="text"  placeholder="ID를 입력해주세요"></li>
+								<li><input name="pw" type="password"  placeholder="PW을 입력해주세요"></li>
+								<li><input name="nick" type="text"  placeholder="NICK을 입력해주세요"></li>
+								<br><h5>좋아하는 장르</h5>
+								<table>
+									<tr>
+										<input id="cb1" name="genre" type="checkbox" value="액션"><label for="cb1">액션</label>
+										<input id="cb2" name="genre" type="checkbox" value="SF"> <label for="cb2">SF</label>
+										<input id="cb3" name="genre" type="checkbox" value="코미디">	  <label for="cb3">코미디</label>
+										<input id="cb4" name="genre" type="checkbox" value="사극">	 	  <label for="cb4">사극</label>
+										<input id="cb5" name="genre" type="checkbox" value="뮤지컬">	  <label for="cb5">뮤지컬</label>										
+										<input id="cb6" name="genre" type="checkbox" value="가족">		  <label for="cb6">가족</label>	
+										<input id="cb7" name="genre" type="checkbox" value="스릴러">	  <label for="cb7">스릴러</label>	
+										<input id="cb8" name="genre" type="checkbox" value="모험">        <label for="cb8">모험</label>
+										<input id="cb9" name="genre" type="checkbox" value="전쟁">        <label for="cb9">전쟁</label>
+										<input id="cb10" name="genre" type="checkbox" value="미스터리">   <label for="cb10">미스터리</label>
+										<input id="cb11" name="genre" type="checkbox" value="범죄">       <label for="cb11">범죄</label>
+										<input id="cb12" name="genre" type="checkbox" value="판타지">     <label for="cb12">판타지</label>
+										<input id="cb13" name="genre" type="checkbox" value="멜로/로맨스"><label for="cb13">멜로/로맨스</label>
+										<input id="cb14" name="genre" type="checkbox" value="공포">		  <label for="cb14">공포</label>
+										<input id="cb15" name="genre" type="checkbox" value="다큐멘터리"> <label for="cb15">다큐멘터리</label>
+										<input id="cb16" name="genre" type="checkbox" value="드라마">     <label for="cb16">드라마</label>
+										<input id="cb17" name="genre" type="checkbox" value="애니메이션"> <label for="cb17">애니메이션</label>
+										<input id="cb18" name="genre" type="checkbox" value="어드벤처">   <label for="cb18">어드벤처</label>
+										<li><input type="submit" value="JoinUs" class="button fit"></li>
+									</tr>
+								</table>
+								
+							</form>
+						</ul>
+					</ul>			
+					</div>
+				
 			</nav>
-			<% } %>
+			
 			<!-- Banner -->
 			<!--
 				비디오를 배경으로 사용하려면 데이터 비디오를 비디오 이름으로 설정하십시오.

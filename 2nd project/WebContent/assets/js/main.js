@@ -80,10 +80,15 @@
 				});
 				var $menu = $('#menu2'),
 				$menuInner;
+				
+				var $menu3 = $('#menu3'),
+				$menuInner3;
 
 			$menu.wrapInner('<div class="inner"></div>');
 			$menuInner = $menu.children('.inner');
+			$menuInner3 = $menu3.children('.inner');
 			$menu._locked = false;
+			$menu3._locked = false;
 
 			$menu._lock = function() {
 
@@ -99,12 +104,33 @@
 				return true;
 
 			};
+			
+			$menu3._lock = function() {
+
+				if ($menu3._locked)
+					return false;
+
+				$menu3._locked = true;
+
+				window.setTimeout(function() {
+					$menu3._locked = false;
+				}, 350);
+
+				return true;
+
+			};
 
 			$menu._show = function() {
 
 				if ($menu._lock())
 					$body.addClass('is-menu2-visible');
 
+			};
+			$menu3._show = function() {
+				
+				if ($menu3._lock())
+					$body.addClass('is-menu3-visible');
+				
 			};
 
 			$menu._hide = function() {
@@ -113,12 +139,22 @@
 					$body.removeClass('is-menu2-visible');
 
 			};
+			$menu3._hide = function() {
+				
+				if ($menu3._lock())
+					$body.removeClass('is-menu3-visible');
+				
+			};
 
 			$menu._toggle = function() {
 
 				if ($menu._lock())
 					$body.toggleClass('is-menu2-visible');
-
+			};
+			
+			$menu3._toggle = function() {
+				if ($menu3._lock())
+					$body.toggleClass('is-menu3-visible');
 			};
 
 			$menuInner
@@ -141,18 +177,51 @@
 						}, 250);
 
 				});
+			
+			$menuInner3
+			.on('click', function(event) {
+				event.stopPropagation();
+			})
+			.on('click', 'a', function(event) {
+
+				var href = $(this).attr('href');
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				// Hide.
+					$menu3._hide();
+
+				// Redirect.
+					window.setTimeout(function() {
+						window.location.href = href;
+					}, 250);
+
+			});
 
 			$menu
-				.appendTo($body)
-				.on('click', function(event) {
+			.appendTo($body)
+			.on('click', function(event) {
 
-					event.stopPropagation();
-					event.preventDefault();
+				event.stopPropagation();
+				event.preventDefault();
 
-					$body.removeClass('is-menu2-visible');
+				$body.removeClass('is-menu2-visible');
 
-				})
-				.append('<a class="close" href="#menu2">Close</a>');
+			})
+			.append('<a class="close" href="#menu2">Close</a>');
+			
+			$menu3
+			.appendTo($body)
+			.on('click', function(event) {
+
+				event.stopPropagation();
+				event.preventDefault();
+
+				$body.removeClass('is-menu3-visible');
+
+			})
+			.append('<a class="close" href="#menu3">Close</a>');
 
 			$body
 				.on('click', 'a[href="#menu2"]', function(event) {
@@ -162,19 +231,23 @@
 
 					// Toggle.
 						$menu._toggle();
-
 				})
-				.on('click', function(event) {
+				.on('click', 'a[href="#menu3"]', function(event) {
 
-					// Hide.
-						$menu._hide();
+					event.stopPropagation();
+					event.preventDefault();
+
+					// Toggle.
+						$menu3._toggle();
 
 				})
 				.on('keydown', function(event) {
 
 					// Hide on escape.
-						if (event.keyCode == 27)
+						if (event.keyCode == 27){
 							$menu._hide();
+							$menu3._hide();
+							}
 
 				});
 		// Banner.

@@ -38,7 +38,7 @@ public class UpdateService implements Command {
 			System.out.println("회원정보 수정 실패");
 		}
 		
-		return "myPage.jsp";
+		return "main.jsp";
 	}
 
 }
