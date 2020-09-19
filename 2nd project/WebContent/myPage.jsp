@@ -60,6 +60,15 @@
 							
 									</div>
 									<br>
+									<h5>좋아하는 장르  </h5>
+									<%
+										String genre = info.getGenre();
+										System.out.println("장르 : "+genre);
+										String[] genres = genre.split("|");
+										for(int i=0; i<genres.length;i++){
+											System.out.println("구분자 | 로 자르기 : "+genres[i]);
+										}
+									%>
 									<table>
                         				<tr>
                           					<input id="cb1" name="genre" type="checkbox" value="액션">        <label for="cb1">액션</label>
@@ -83,8 +92,8 @@
                         				</tr>
                     				 </table>
 									</div>
+									<input width= "100px" type="submit" value="회원 정보 수정" class="button special fit">
 								</section>
-								<input type="submit" value="수정" class="button special fit">
 							</form>
 
 			<!-- Three -->
