@@ -130,7 +130,8 @@
 				확장(예: 영상/영상). 동영상은 .mp4 및 .webm으로 제공되어야 함
 				올바르게 작동하는 형식.
 			-->
-	<section id="banner" style="background-image: url(images/다운로드1.jpg);">
+	<section id="banner"
+		style="background-image: url(images/Download1.jpg);">
 		<div class="inner">
 			<header>
 				<h1>영화를 추천 받으세요!</h1>
@@ -182,19 +183,20 @@
 					}
 					%>
 				</div>
+			</section>
 
+			<!-- One -->
+			<!-- Wrapper -->
 
-				<!-- One -->
-				<!-- Wrapper -->
+			<br>
 
-				<br>
-
-				<header class="align-center">
-					<h2 class="h2_1">개봉 예정작</h2>
-					<p></p>
-				</header>
-				<!--2열 비디오 섹션-->
-				<!-- Main -->
+			<header class="align-center">
+				<h2 class="h2_1">개봉 예정작</h2>
+				<p></p>
+			</header>
+			<!--2열 비디오 섹션-->
+			<!-- Main -->
+			<section id="main2">
 				<!-- Items -->
 				<div class="items">
 					<%
@@ -218,16 +220,18 @@
 					%>
 
 				</div>
+			</section>
+			<br>
 
-				<br>
 
-
-				<header class="align-center">
-					<h2 class="h2_1">추천영화</h2>
-					<p></p>
-				</header>
-				<!--2열 비디오 섹션-->
-				<!-- Main -->
+			<header class="align-center">
+				<h2 class="h2_1">추천영화</h2>
+				<p></p>
+			</header>
+			<!--2열 비디오 섹션-->
+			<!-- Main -->
+			<section id="main2">
+				<
 				<!-- Items -->
 				<div class="items">
 					<%

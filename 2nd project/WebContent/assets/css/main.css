@@ -5194,27 +5194,28 @@ body.is-menu3-visible #menu3 {
 .scrollZone {
 	position: absolute;
 	width: 6rem;
-	height: 43vh;
+	height: 50vh;
 	cursor: -moz-grab;
 	cursor: -webkit-grab;
 	cursor: -ms-grab;
 	cursor: grab;
 	z-index: 10001;
 	border: 3px solid red;
+	transform: translateY(71%);
 	
 }
 
 	.scrollZone.left {
 	
-		top: 79.2em;
+		top: 0;
 		left: 0;
-		bottom: -29.5em;
+		bottom: 0;
 	}
 	
 	.scrollZone.right {
-		top: 79.2em;
+		top: 0;
 		right: 0;
-		bottom: -29.5em;
+		bottom: 0;
 		
 	}
 
