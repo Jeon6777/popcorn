@@ -170,9 +170,10 @@
 
 	<!-- Footer -->
 	<header class="align-center">
-		<h2 class="h2_1" style="text-align: center">나의 평점</h2>
+		<h2 class="h2_1" style="text-align: center">내가 평가한 영화</h2>
 	</header>
 	<footer id="footer">
+	<div style="width:100%; height:520px; overflow:auto">
 		<table>
 			<tr>
 				<%
@@ -223,7 +224,8 @@
 
 			</tr>
 		</table>
-	</footer>
+	</div>
+</footer>
 
 	<!-- Scripts -->
 	<script src="assets/js/scroll.js"></script>
