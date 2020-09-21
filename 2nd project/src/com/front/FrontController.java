@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.cont.JoinService;
 import com.cont.LoginService;
 import com.cont.LogoutService;
+import com.cont.StarRatingService;
 import com.cont.UpdateService;
 import com.DAO.MemberDAO;
 import com.DAO.MovieDAO;
@@ -38,6 +39,7 @@ public class FrontController extends HttpServlet {
 		map.put("LogoutService.do",new LogoutService());
 		map.put("UpdateService.do",new UpdateService());
 		map.put("LoginService.do",new LoginService());
+		map.put("StarRatingService.do", new StarRatingService());
 	}
 
 
