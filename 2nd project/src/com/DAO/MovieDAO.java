@@ -9,11 +9,43 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import com.DTO.MovieDTO;
+
 public class MovieDAO {
 	Connection conn = null;
 	PreparedStatement pst = null;
 	ResultSet rs = null;
 	int cnt = 0;
+	
+	//전체 MovieDTO 리스트
+	public ArrayList<MovieDTO> allMovie(String DB_tableName) {
+		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
+		getConn();
+		String sql = "select * from "+DB_tableName;
+		try {
+			pst = conn.prepareStatement(sql);
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				
+				int no = rs.getInt(1);
+				String movieNm = rs.getString(2);
+				String director = rs.getString(3);
+				String genre = rs.getString(4);
+				String actor = rs.getString(5);
+				String opendt = rs.getString(6);
+				String img = rs.getString(7);
+				
+				MovieDTO dto = new MovieDTO(no, movieNm, director, genre, actor, opendt, img);
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+	}
 	
 	
 	//테이블명 입력시(상영작 screen, 영화 movie) 영화이름 전체출력

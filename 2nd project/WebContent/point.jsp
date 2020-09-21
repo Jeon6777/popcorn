@@ -1,3 +1,5 @@
+<%@page import="com.DTO.MovieDTO"%>
+<%@page import="java.util.Random"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.DAO.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -16,6 +18,25 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <style>
+
+
+body {
+		background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
+		background-position: top left, bottom left, auto;
+		background-size: auto, 100% 100%, cover;
+		background-attachment: fixed;
+		background-repeat: repeat, no-repeat, auto;
+		position: relative;
+		background-color: #150C07;
+		line-height: 1.75em;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: #020B13;
+	}
+
 img {
 	width: 400px;
 }
@@ -126,29 +147,44 @@ star-input>.input.focus {
 
 	<%
 		MovieDAO dao = new MovieDAO();
-	ArrayList<String> list = dao.movieNmAll("movie");
+	ArrayList<MovieDTO> list = dao.allMovie("movie");
+	
 	%>
-	<h1 style = "text-align: center">영화에 평점을 입력하세요</h1>
+	<header>
+	<h1 style = "text-align: center; color: white; font-size: 50px;">영화에 평점을 입력하세요</h1>
+	</header>
 	<div>
 		<table>
 			<%
-				int a = 0;
-			for (int j = 0; j < list.size()/4; j++) {
+			Random rd = new Random();
+				int a = rd.nextInt(list.size());
+			for (int j = 0; j < 4; j++) {
 			%>
 			<tr>
 				<%
+				String print = "";
 					for (int i = 0; i < 4; i++) {
 				%>
 				<td>
 					<div class="row">
 						<div class="col-sm-6 col-md-4" style="width: 80%">
 							<div class="thumbnail">
-								<a href="img/<%=list.get(a)%>.jpg">
-								<img src="img/<%=list.get(a)%>.jpg" alt="movie">
+							<%
+								if(list.get(a).getMovieNm().contains(":")){
+									String[] spl = list.get(a).getMovieNm().split(":");
+									print = spl[0].trim();
+									System.out.println(print);
+								}else{
+									print = list.get(a).getMovieNm();
+									System.out.println(print);
+								}
+							%>
+								<a href="img/<%=print%>.jpg">
+								<img src="img/<%=print%>.jpg" alt="movie">
 								</a>
 								<div class="caption">
-									<h3><%=list.get(a)%></h3>
-									<p><%=list.get(a)%></p>
+									<h3><%=list.get(a).getMovieNm()%></h3>
+									<p><%=list.get(a).getGenre()%></p>
 									<span class="star-input">
 										<span class="input">
 											<input type="radio" name="star-input" value="1" id="p1">
@@ -172,9 +208,7 @@ star-input>.input.focus {
 					</div>
 				</td>
 				<%
-					if (a < list.size()) {
-					a++;
-				}
+				a = rd.nextInt(list.size());
 				%>
 				<%
 					}

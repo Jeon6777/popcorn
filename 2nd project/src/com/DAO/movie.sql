@@ -85,6 +85,11 @@ select * from MOVIE_GRADE;
 select * from MOVIE_NOTE;
 
 
+--불 필요한 데이터 삭제 (사진을 못불러옴)
+delete from movie where movieNm like '%극장판%';
+delete from movie where movieNm like '%꾸루꾸루%';
+delete from movie where movieNm like '이상한 게임';
+
 --------------------------------------------------------------------------------------------------------------------------------------
 drop table movie_member;
 
