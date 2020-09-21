@@ -41,23 +41,20 @@
 						<header class="align-center">
 							<h3><%=info.getNick() %> 님 환영합니다!</h3>
 						</header>
-							<h4>정보수정</h4>
+							<img alt="" src="img/memberinfo.png" style="margin-left: 170px">
 						<div class="box">
 							<form method="post" action="UpdateService.do">
 									<h4>ID : <%=info.getId() %></h4>
-									<h5>비밀번호  </h5>
+									<h5>비밀번호 변경</h5>
 									<div class="6u$ 12u$(xsmall)">
 										<input type="password" name="pw" id="pw" placeholder="새 비밀번호" >
 									</div>
-									
 									<div class="6u$ 12u$(xsmall)">
 										<input type="password" name="pw_Check" id="pw_Check" placeholder="새 비밀번호 확인" >
 									</div>
-									<br>
 									<h5>닉네임  </h5>
 									<div class="6u$ 12u$(xsmall)">
 										<input type="text" name="nick" id="nick" value=<%=info.getNick() %> >
-							
 									</div>
 									<br>
 									<h5>좋아하는 장르  </h5>
@@ -80,7 +77,7 @@
                           					<input id="cb7" name="genre" type="checkbox" value="스릴러">     <label for="cb7">스릴러</label>   
                           					<input id="cb8" name="genre" type="checkbox" value="모험">        <label for="cb8">모험</label>
                         				  	<input id="cb9" name="genre" type="checkbox" value="전쟁">        <label for="cb9">전쟁</label>
-                       					   	<input id="cb10" name="genre" type="checkbox" value="미스터리">   <label for="cb10">미스터리</label>
+                       					   	<input id="cb10" name="genre" type="checkbox" value="미스터리">   <label for="cb10">미스터리</label><br>
                       					    <input id="cb11" name="genre" type="checkbox" value="범죄">       <label for="cb11">범죄</label>
                       						<input id="cb12" name="genre" type="checkbox" value="판타지">     <label for="cb12">판타지</label>
                       						<input id="cb13" name="genre" type="checkbox" value="멜로/로맨스"><label for="cb13">멜로/로맨스</label>
@@ -92,7 +89,8 @@
                         				</tr>
                     				 </table>
 									</div>
-									<input width= "100px" type="submit" value="회원 정보 수정" class="button special fit">
+									<input style="margin-left: 270px;" type="submit" value="회원 정보 수정" class="button special fit">
+									<input type="button" value="뒤로가기" onclick="history.back(-1);" class="button special fit">
 								</section>
 							</form>
 

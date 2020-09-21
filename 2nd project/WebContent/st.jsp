@@ -5,10 +5,10 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<script src="jquery-3.5.1.min.js"></script>
+<script src="/js/jquery-3.5.1.min.js"></script>
  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<script src="star.js"></script>
+<script src="/js/star.js"></script>
 <style>
 
 		/* 1번 별점 스타일 */

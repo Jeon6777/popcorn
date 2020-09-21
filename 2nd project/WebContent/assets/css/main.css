@@ -1942,10 +1942,12 @@
 /* Box */
 
 	.box {
-		border-radius: 4px;
+		width: 1030px;
+		border-radius: 10px;
 		border: solid 1px;
-		margin-bottom: 2em;
 		padding: 1.5em;
+		margin: 0 auto;
+		
 	}
 
 		.box > :last-child,
@@ -2013,9 +2015,9 @@
 		input[type="button"].fit,
 		button.fit,
 		.button.fit {
-			display: block;
-			margin: 0 0 1em 0;
-			width: 100%;
+			margin-top: 15px;
+			margin-left: 5px;
+			width: 30%;
 		}
 
 		input[type="submit"].small,
@@ -2093,7 +2095,7 @@
 		button.alt,
 		.button.alt {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+			-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
 			color: #ffffff !important;
 		}
 
@@ -2277,6 +2279,7 @@
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
 		input[type="text"]:invalid,
@@ -2284,7 +2287,8 @@
 		input[type="email"]:invalid,
 		select:invalid,
 		textarea:invalid {
-			box-shadow: none;
+			
+-shadow: none;
 		}
 
 	.select-wrapper {
