@@ -1,6 +1,12 @@
+/*
+	Parallelism by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ */
+
 (function($) {
 
-	var $window = $(window), $body = $('body'), $wrapper = $('div#wrapper1'), $main = $('#main1'), settings = {
+	var $window = $(window), $body = $('body'), $wrapper = $('div#wrapper'), $main = $('#main2'), settings = {
 
 		// Keyboard shortcuts.
 		keyboardShortcuts : {
@@ -26,7 +32,7 @@
 //		},
 
 		// Scroll zones.
-		scrollZones1 : {
+		scrollZones : {
 
 			// If true, enables scrolling via scroll zones on the left/right
 			// edges of the scren.
@@ -309,7 +315,7 @@
 	// })();
 
 	// Scroll zones.
-	if (settings.scrollZones1.enabled)
+	if (settings.scrollZones.enabled)
 		(function() {
 
 			var $left = $('<div class="scrollZone left"></div>'), $right = $('<div class="scrollZone right"></div>'), $zones = $left
@@ -335,7 +341,7 @@
 
 				intervalId = setInterval(function() {
 					$main.scrollLeft($main.scrollLeft()
-							+ (settings.scrollZones1.speed * direction));
+							+ (settings.scrollZones.speed * direction));
 				}, 25);
 
 			}, deactivate = function() {

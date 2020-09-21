@@ -2942,6 +2942,7 @@
 		-webkit-transition: -webkit-filter 0.5s ease-in-out;
 		-ms-transition: -ms-filter 0.5s ease-in-out;
 		transition: filter 0.5s ease-in-out;
+		position: relative;
 	}
 	#wrapper:before {
 		content: '';
@@ -2955,6 +2956,89 @@
 
 	}
 	body.is-poptrox-visible #wrapper {
+		-moz-filter: blur(0.25em);
+		-webkit-filter: blur(0.25em);
+		-ms-filter: blur(0.25em);
+		filter: blur(0.25em);
+	}
+	
+	#wrapper1 {
+		/* min-height: 100vh; */
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		-moz-transition: -moz-filter 0.5s ease-in-out;
+		-webkit-transition: -webkit-filter 0.5s ease-in-out;
+		-ms-transition: -ms-filter 0.5s ease-in-out;
+		transition: filter 0.5s ease-in-out;
+		position: relative;
+	}
+	#wrapper1:before {
+		content: '';
+		display: block;
+	}
+	@media screen and (max-width: 736px) {
+
+		#wrapper1 {
+			min-height: 0;
+		}
+
+	}
+	body.is-poptrox-visible #wrapper1 {
+		-moz-filter: blur(0.25em);
+		-webkit-filter: blur(0.25em);
+		-ms-filter: blur(0.25em);
+		filter: blur(0.25em);
+	}
+	#wrapper2 {
+		/* min-height: 100vh; */
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		-moz-transition: -moz-filter 0.5s ease-in-out;
+		-webkit-transition: -webkit-filter 0.5s ease-in-out;
+		-ms-transition: -ms-filter 0.5s ease-in-out;
+		transition: filter 0.5s ease-in-out;
+		position: relative;
+	}
+	#wrapper2:before {
+		content: '';
+		display: block;
+	}
+	@media screen and (max-width: 736px) {
+
+		#wrapper2 {
+			min-height: 0;
+		}
+
+	}
+	body.is-poptrox-visible #wrapper2 {
 		-moz-filter: blur(0.25em);
 		-webkit-filter: blur(0.25em);
 		-ms-filter: blur(0.25em);

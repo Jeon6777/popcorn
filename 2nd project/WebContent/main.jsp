@@ -157,19 +157,21 @@
 					%>
 				</div>
 			</section>
+		</section>
+	</div>
+	<!-- One -->
 
-			<!-- One -->
-			<!-- Wrapper -->
-
-			<br>
-
+	<!-- Wrapper -->
+	
+	<div id="wrapper1" class="inner, main">
+		<section class="wrapper style1">
 			<header class="align-center">
 				<h2 class="h2_1">개봉 예정작</h2>
 				<p></p>
 			</header>
 			<!--2열 비디오 섹션-->
 			<!-- Main -->
-			<section id="main2">
+			<section id="main1">
 				<!-- Items -->
 				<div class="items">
 					<%
@@ -194,17 +196,19 @@
 
 				</div>
 			</section>
-			<br>
+		</section>
+	</div>
+	
 
-
+	<div id="wrapper2" class="inner, main">
+		<section class="wrapper style1">
 			<header class="align-center">
 				<h2 class="h2_1">추천영화</h2>
 				<p></p>
 			</header>
 			<!--2열 비디오 섹션-->
 			<!-- Main -->
-			<section id="main2">
-				<
+			<section id="main0">
 				<!-- Items -->
 				<div class="items">
 					<%
@@ -300,6 +304,8 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<script src="assets/js/scroll3.js"></script>
+	<script src="assets/js/scroll2.js"></script>
 	<script src="assets/js/scroll.js"></script>
 	<script src="assets/js/main.js"></script>
 
