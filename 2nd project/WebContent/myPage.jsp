@@ -15,6 +15,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		 <script src="/0911/jquery-3.5.1.min.js"></script>
+	<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 	</head>
 	<body class="subpage">
 	<%
@@ -143,9 +146,18 @@
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-			 		<div class="items">
+
+	<div id="wrapper1" class="inner, main">
+		<section class="wrapper style1">
+			<header class="align-center">
+				<h2 class="h2_1">내가 평가한 영화</h2>
+				<p></p>
+			</header>
+			<!--2열 비디오 섹션-->
+			<!-- Main -->
+			<section id="main1">
+				<!-- Items -->
+				<div class="items">
 					<%
 					MovieDAO dao1 = new MovieDAO();
 					GradeDAO dao2 = new GradeDAO();
@@ -156,22 +168,26 @@
 						int b = 0;
 					%>
 					<%
-						for (int i = 0; i < list.size(); i++) {
-						System.out.print(list.size());
+						for (int i = 0; i < list1.size(); i++) {
 					%>
-					
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
+						<h2 class="h2"><%=list.get(i).getMovieNm()%></h2>
 						<a href="img/<%=list.get(i).getMovieNm()%>.jpg" class="image2">
-						<img class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
-						<p><%=list.get(i).getGrade()%>점</p>
+						<img style="width: 200px; height: 300px;" class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
 					</article>
-					 
-					<%}%>
-				</div> 
-				</div>
-			</footer>
+					<%
+						if (b < list1.size()) {
+						b++;
+					}
+					}
+					%>
 
+				</div>
+			</section>
+		</section>
+	</div>
+		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -180,7 +196,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/scroll.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
