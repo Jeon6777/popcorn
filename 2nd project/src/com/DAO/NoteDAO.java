@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.DTO.MemberDTO;
 import com.DTO.NoteDTO;
 
 public class NoteDAO {
@@ -96,6 +97,29 @@ public class NoteDAO {
 		}return list;
 		
 	}
-	
+	public ArrayList<String[]> getMyNote(MemberDTO info) {
+		getConn();
+		ArrayList<String[]> list  = new ArrayList<String[]>();
+		String sql = "select movienm, note from movie_note where id like ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, info.getId());
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				String movieNm = rs.getString(1);
+				String note  = rs.getString(2);
+				String[] arr = new String[2];
+				arr[0] = movieNm;
+				arr[1] = note;
+				list.add(arr);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}return list;
+		
+	}
 
 }

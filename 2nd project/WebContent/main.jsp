@@ -80,13 +80,13 @@
 							<table>
 								<tr>
 								<% 
-									String[] genre = {"액션","SF","코미디","사극","뮤지컬","가족","스릴러","모험","전쟁","미스터리"
+									String[] genreList = {"액션","SF","코미디","사극","뮤지컬","가족","스릴러","모험","전쟁","미스터리"
 											,"범죄","판타지","멜로/로맨스","공포","다큐멘터리","드라마","애니메이션","어드벤처"};
 									
-									for(int i = 0; i < genre.length; i++){%>
+									for(int i = 0; i < genreList.length; i++){%>
 										
-									<input id="cb<%=i+1%>" name="genre" type="checkbox" value="<%=genre%>">
-									<label for="cb<%=i+1%>"><%=genre[i]%></label>
+									<input id="cb<%=i+1%>" name="genre" type="checkbox" value="<%=genreList[i]%>">
+									<label for="cb<%=i+1%>"><%=genreList[i]%></label>
 									<%}%>
 									<li><input type="submit" value="JoinUs" class="button fit"></li>
 								</tr>
