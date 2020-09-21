@@ -1,3 +1,8 @@
+<%@page import="com.DTO.GradeDTO"%>
+<%@page import="com.DAO.GradeDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.MovieDAO"%>
+<%@page import="java.util.Random"%>
 <%@page import="com.DTO.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -97,49 +102,40 @@
 			<!-- Three -->
 				<section class="wrapper ">
 					<div class="inner">
-						<header class="align-center">
-							<h2>Aliquam ipsum purus dolor</h2>
-							<p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
-						</header>
-
-						<!-- 3 Column Video Section -->
-							<div class="flex flex-3">
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic09.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Cras eget lacus sed mauris scelerisque tincidunt
-									</p>
-									<a href="generic.html" class="link"><span>Click Me</span></a>
-								</div>
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic10.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Vivamus vulputate lacus non massa auctor lobortis
-									</p>
-									<a href="generic.html" class="link"><span>Click Me</span></a>
-								</div>
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic11.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<p class="caption">
-										Nam eu nisi non ante sodales interdum a vitae neque
-									</p>
-									<a href="generic.html" class="link"><span>Click Me</span></a>
-								</div>
+						<div class="tb_wrap">
+  							<div class="tb_box">
+    							<table class="tb">
+    				 				<caption>내가 작성한 한줄평</caption>
+      									<tr class="fixed_top">
+       										<th class="cell1 cross" scope="col">영화 제목</th>
+       										<th class="cell2" scope="col">한줄평</th>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+      									<tr>
+        									<th class="cell1 fixed_col" scope="row">농구</th>
+        									<td class="cell2">마이클 조던</td>
+      									</tr>
+    								</table>
+ 								</div>
 							</div>
 					</div>
 				</section>
@@ -149,44 +145,30 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
-					<div class="flex flex-3">
-						<div class="col">
-							<h3>Vestibullum</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Lobortis</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Accumsan</h3>
-							<ul class="alt">
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-								<li><a href="#">Vis id faucibus montes tempor</a></li>
-								<li><a href="#">Massa amet lobortis vel.</a></li>
-								<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="copyright">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
-					</ul>
-					&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Coverr</a>. Video: <a href="https://coverr.co">Coverr</a>.
+			 		<div class="items">
+					<%
+					MovieDAO dao1 = new MovieDAO();
+					GradeDAO dao2 = new GradeDAO();
+					String id = info.getId();
+					ArrayList<String> list1 = dao1.movieNmAll("movie");
+					ArrayList<GradeDTO> list = dao2.getGrade(id);
+						
+						int b = 0;
+					%>
+					<%
+						for (int i = 0; i < list.size(); i++) {
+						System.out.print(list.size());
+					%>
+					
+					<article class="item thumb span-1"
+						style="width: 280px; height: 400px;">
+						<a href="img/<%=list.get(i).getMovieNm()%>.jpg" class="image2">
+						<img class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
+						<p><%=list.get(i).getGrade()%>점</p>
+					</article>
+					 
+					<%}%>
+				</div> 
 				</div>
 			</footer>
 

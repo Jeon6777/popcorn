@@ -6,9 +6,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import com.DTO.GradeDTO;
+import com.DTO.MovieDTO;
 
 public class GradeDAO {
 	Connection conn = null;
@@ -114,23 +116,28 @@ public class GradeDAO {
 	
 	}
 	
-	public float getGrade(GradeDTO dto) { // 평점 가져오기 , id와 movienm dto로 가져오기
+	public ArrayList<GradeDTO> getGrade(String id) { // 평점 가져오기 , id와 movienm dto로 가져오기
+		
+		ArrayList<GradeDTO> list = new ArrayList<GradeDTO>();
+		
 		getConn();
-		float grade = 0;
-		String sql = "select grade from movie_grade where id like ? and movienm like ?";
+		
+		String sql = "select movieNm,grade from movie_grade where id = ?";
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, dto.getId());
-			pst.setString(2, dto.getMovieNm());
+			pst.setString(1, id);
 			rs = pst.executeQuery();
-			if(rs.next()) {
-				grade = rs.getFloat(1);
+			while(rs.next()) {
+				String movieNm = rs.getString(1);
+				float grade = rs.getFloat(2);
+				GradeDTO dto = new GradeDTO(movieNm, grade);
+				list.add(dto);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			close();
-		}return grade;
+		}return list;
 		
 	}
 }

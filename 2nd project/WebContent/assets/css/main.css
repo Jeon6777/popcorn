@@ -5494,4 +5494,64 @@ body.is-menu3-visible #menu3 {
 				}
 
 		}
+		
+		/* reset & normalize */
+* {
+  box-sizing:border-box;
+}
+caption {
+  position:absolute;
+  left:-9999px;
+  font-size:0;
+}
+tr {
+  border-bottom:1px solid #dedede;
+}
+tr:last-child {
+  border-bottom:0;
+}
+th, td {
+  height:42px;
+  font:500 14px 'spoqa han sans';
+  text-align:center;
+}
+
+/* css */
+.tb_wrap {
+  position:relative;
+  width:1000px;
+  margin:20px auto;
+  padding-top:43px;
+}
+.tb_box {
+  max-height:210px;
+  overflow-y:scroll;
+  border-bottom:1px solid #dedede;
+}
+.tb {
+  border-collapse:collapse;
+  border-spacing:0;
+  width:100%;
+}
+.cell1 {
+  width: 20%;
+}
+.cell2 {
+  text-align: left;
+  width: 80%;
+}
+.fixed_top {
+  display:inline-table;
+  position:absolute;
+  top:0;
+  width:calc(100% - 17px);
+  background:#eef7ff;
+}
+.fixed_top th {
+  border-top:1px solid #dedede;
+  border-bottom:1px solid #dedede;
+}
+.tb tr.end {
+  color:#999;
+}
 	
