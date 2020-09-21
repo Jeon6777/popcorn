@@ -174,7 +174,7 @@
 						style="width: 280px; height: 400px;">
 						<h2 class="h2"><%=list.get(i).getMovieNm()%></h2>
 						<a href="img/<%=list.get(i).getMovieNm()%>.jpg" class="image2">
-						<img style="width: 200px; height: 300px;" class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
+						<img class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
 					</article>
 					<%
 						if (b < list1.size()) {
