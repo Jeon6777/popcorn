@@ -145,19 +145,6 @@
 
 			</div>
 
-		<!-- Footer -->
-
-	<div id="wrapper1" class="inner, main">
-		<section class="wrapper style1">
-			<header class="align-center">
-				<h2 class="h2_1">내가 평가한 영화</h2>
-				<p></p>
-			</header>
-			<!--2열 비디오 섹션-->
-			<!-- Main -->
-			<section id="main1">
-				<!-- Items -->
-				<div class="items">
 					<%
 					MovieDAO dao1 = new MovieDAO();
 					GradeDAO dao2 = new GradeDAO();
@@ -165,28 +152,11 @@
 					ArrayList<String> list1 = dao1.movieNmAll("movie");
 					ArrayList<GradeDTO> list = dao2.getGrade(id);
 						
-						int b = 0;
 					%>
-					<%
-						for (int i = 0; i < list1.size(); i++) {
-					%>
-					<article class="item thumb span-1"
-						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list.get(i).getMovieNm()%></h2>
-						<a href="img/<%=list.get(i).getMovieNm()%>.jpg" class="image2">
-						<img class="img" src="img/<%=list.get(i).getMovieNm()%>.jpg" alt=""></a>
-					</article>
-					<%
-						if (b < list1.size()) {
-						b++;
-					}
-					}
-					%>
-
-				</div>
-			</section>
-		</section>
-	</div>
+		<!-- Footer -->
+		<footer>
+		
+		</footer>
 		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
