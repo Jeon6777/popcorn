@@ -47,19 +47,16 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-		<li><a href="main.jsp">메인</a></li>
-			<li><a href="myPage.jsp">회원정보 수정</a></li>
-			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="elements.jsp">Elements</a></li>
 		
-		<%-- <%
+		<%
 		if(info == null){%>
 			
-			<li>로그인을 해주세요</li>
+			<li><a href="#menu2">로그인을 해주세요</a></li>
 		
 		<%}else{
 			
 			if(info.getId().equals("admin")){ %>
+			<li><a href="main.jsp">메인</a></li>
 			<li><a href="main.jsp">Home</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="Admin.jsp">admin</a></li>
@@ -68,10 +65,10 @@
 		<%}else{%>
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="myPage.jsp">회원정보 수정</a></li>
+			<li><a href="포인트.jsp">취향 입력하기</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="elements.jsp">Elements</a></li>
 			<%}
-			}%> --%>
+			}%>
 			
 		</ul>
 	</nav>
@@ -131,7 +128,7 @@
 			<header>
 				<h1>영화를 추천 받으세요!</h1>
 				<p>
-					자신의 취향을 입력하고<br /> 나와 맞는 영화를 찾으세요.
+					자신의 취향을 입력하고<br/> 나와 맞는 영화를 찾으세요.
 				</p>
 			</header>
 			<a href="#wrapper" class="button big alt scrolly">영화 목록 보기</a> <a
@@ -288,13 +285,15 @@
 	
 
 	<div id="wrapper2" class="inner, main">
-		<section class="wrapper style1">
+		<section class="wrapper style1" style="width: 100%;">
 			<header class="align-center">
 				<h2 class="h2_1">추천영화</h2>
 				<p></p>
 			</header>
 			<!--2열 비디오 섹션-->
 			<!-- Main -->
+			
+			<% if (info != null){ %>
 			<section id="main0">
 				<!-- Items -->
 				<div class="items">
@@ -321,6 +320,10 @@
 
 				</div>
 			</section>
+			<%}else{%>
+				<h1 style="text-align:center; font-size: 25px;">로그인을 해주세요</h1>
+				<h1 style="text-align:center; font-size: 25px;"><a href="#menu2">로그인하기</a></h1>
+			<%}%>
 		</section>
 	</div>
 
