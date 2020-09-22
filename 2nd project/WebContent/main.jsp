@@ -47,10 +47,32 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
+		<li><a href="main.jsp">메인</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
+			<li><a href="generic.jsp">Generic</a></li>
+			<li><a href="elements.jsp">Elements</a></li>
+		
+		<%-- <%
+		if(info == null){%>
+			
+			<li>로그인을 해주세요</li>
+		
+		<%}else{
+			
+			if(info.getId().equals("admin")){ %>
+			<li><a href="main.jsp">Home</a></li>
+			<li><a href="generic.jsp">Generic</a></li>
+			<li><a href="Admin.jsp">admin</a></li>
+			
+			
+		<%}else{%>
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="myPage.jsp">회원정보 수정</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="elements.jsp">Elements</a></li>
+			<%}
+			}%> --%>
+			
 		</ul>
 	</nav>
 	<nav id="menu2">
@@ -144,8 +166,38 @@
 					%>
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list.get(a)%></h2>
-						<a href="img/<%=list.get(a)%>.jpg" class="image2"> <img
+						<h2 class="h2"><%=list.get(a)%>
+						<input type="button" class="my-button<%=i%>" value="예고편"
+					style="font-size: 12px; width: 70px; height:30px; float: right; text-align:center;">
+				<div class="element_to_pop_up<%=i%>">
+					<a class="b-close">X</a>
+					<iframe width="1280" height="720"
+						<%if(list.get(i).contains("다만 악에서 구하소서")){ %>
+						src="https://www.youtube.com/embed/7oKAPbnl7mQ"
+						<%}else if(list.get(i).contains("오! 문희")){ %>
+						src="https://www.youtube.com/embed/tecLzQwIoMI?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("기기괴괴")){ %>
+						src="https://www.youtube.com/embed/DNb9QP5kilE?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("결백")){ %>
+						src="https://www.youtube.com/embed/5QWeKTO9NpY?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("남매의 여름밤")){ %>
+						src="https://www.youtube.com/embed/J20a-ws8wE0?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("오케이 마담")){ %>
+						src="https://www.youtube.com/embed/Cpzns_3BWII?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("카일라스 가는 길")){ %>
+						src="https://www.youtube.com/embed/29H83sX99Bc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("후쿠오카")){ %>
+						src="https://www.youtube.com/embed/HpDPuNVG1no?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("나를 구하지 마세요")){ %>
+						src="https://www.youtube.com/embed/1zvoSWKKkhQ?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list.get(i).contains("메피스토")){ %>
+						src="https://www.youtube.com/embed/qXQMgjyQpIc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}%> frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</div>
+						</h2>
+						<a href="img/<%=list.get(i)%>.jpg" class="image2"> <img
 							class="img" src="img/<%=list.get(a)%>.jpg" alt="">
 						</a>
 					</article>
@@ -179,13 +231,48 @@
 					ArrayList<String> list1 = dao.movieNmAll("movie");
 					%>
 					<%
-						for (int i = 0; i < list1.size(); i++) {
+						for (int i = list.size(); i < 21; i++) {
 					%>
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list1.get(b)%></h2>
+						<h2 class="h2"><%=list1.get(b)%>
+						<input type="button" class="my-button<%=i%>" value="예고편"
+					style="font-size: 12px; width: 70px; height:30px; float: right; text-align:center;">
+				<div class="element_to_pop_up<%=i%>">
+					<a class="b-close">X</a>
+					<iframe width="1280" height="720"
+						<%if(list1.get(b).contains("임금님의 사건수첩")){ %>
+						src="https://www.youtube.com/embed/w_8oPI6Vexc"
+						<%}else if(list1.get(b).contains("특별시민")){ %>
+						src="https://www.youtube.com/embed/7pkMGdUradQ"
+						<%}else if(list1.get(b).contains("아빠는 딸")){ %>
+						src="https://www.youtube.com/embed/0AyJ3rY0x3A"
+						<%}else if(list1.get(b).contains("시간위의 집")){ %>
+						src="https://www.youtube.com/embed/wmhP8fAUJng"
+						<%}else if(list1.get(b).contains("어느날")){ %>
+						src="https://www.youtube.com/embed/J20a-ws8wE0?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("원라인")){ %>
+						src="https://www.youtube.com/embed/Cpzns_3BWII?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("보통사람")){ %>
+						src="https://www.youtube.com/embed/29H83sX99Bc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("비정규직 특수요원")){ %>
+						src="https://www.youtube.com/embed/HpDPuNVG1no?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("루시드 드림")){ %>
+						src="https://www.youtube.com/embed/1zvoSWKKkhQ?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("해빙")){ %>
+						src="https://www.youtube.com/embed/1zvoSWKKkhQ?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(list1.get(b).contains("레이디버그")){ %>
+						src="https://www.youtube.com/embed/qXQMgjyQpIc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}%>frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</div>
+						
+						
+						</h2>
 						<a href="img/<%=list1.get(b)%>.jpg" class="image2"><img
 							class="img" src="img/<%=list1.get(b)%>.jpg" alt=""></a>
+							
 					</article>
 					<%
 						if (b < list1.size()) {
@@ -300,6 +387,9 @@
 	<script src="assets/js/scroll2.js"></script>
 	<script src="assets/js/scroll.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="assets/js/jquery.bpopup-0.10.0.min.js"></script>
+	<script src="assets/js/frame.js"></script>
+	
 </body>
 </html>
