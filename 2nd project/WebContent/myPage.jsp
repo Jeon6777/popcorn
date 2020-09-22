@@ -35,9 +35,8 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="myPage.jsp">회원정보 수정</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="elements.jsp">Elements</a></li>
+			<li><a href="point.jsp">취향 입력하기</a></li>
 		</ul>
 	</nav>
 
