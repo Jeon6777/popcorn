@@ -19,7 +19,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <style type="text/css">
 @import
-	url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+	url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); 
 img {
 	width: 400px;
 }
@@ -56,50 +56,86 @@ h1 {
 	margin: 10px;
 }
 
-fieldset.*, label {
+fieldset, label {
 	margin: 0;
 	padding: 0;
 }
+/* fieldset[class *="rating"] */
 /****** Style Star Rating Widget *****/
-.rating {
-	border: none;
-	float: left;
+
+/* .rating0 { 
+  border: none;
+  float: left;
 }
 
-.rating>input {
-	display: none;
+.rating0 > input { display: none; } 
+.rating0 > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
 }
 
-.rating>label:before {
-	margin: 5px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f005";
+.rating0 > .half:before { 
+  content: "\f089";
+  position: absolute;
 }
 
-.rating>.half:before {
-	content: "\f089";
-	position: absolute;
+.rating0 > label { 
+  color: #ddd; 
+ float: right; 
+} */
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+/* 
+.rating0 > input:checked ~ label, /* show gold star when clicked */
+.rating0:not(:checked) > label:hover, /* hover current star */
+.rating0:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating0 > input:checked + label:hover, /* hover current star when changing rating */
+.rating0 > input:checked ~ label:hover,
+.rating0 > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating0 > input:checked ~ label:hover ~ label { color: #FFED85;  }  */
+
+
+/****** Style Star Rating Widget *****/
+
+/* .rating1 { 
+  border: none;
+  float: left;
 }
 
-.rating>label {
-	color: #ddd;
-	float: right;
+.rating1 > input { display: none; } 
+.rating1 > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating1 > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating1 > label { 
+  color: #ddd; 
+ float: right; 
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
-.rating>input:checked ~ label, /* show gold star when clicked */ .rating:not(:checked)>label:hover,
-	/* hover current star */ .rating:not(:checked)>label:hover ~ label {
-	color: #FFED85;
-} /* hover previous stars in list */
-.rating>input:checked+label:hover,
-	/* hover current star when changing rating */ .rating>input:checked ~
-	label:hover, .rating>label:hover ~ input:checked ~ label,
-	/* lighten current selection */ .rating>input:checked ~ label:hover ~
-	label {
-	color: #ffc700;
-}
+
+.rating1 > input:checked ~ label, /* show gold star when clicked */
+.rating1:not(:checked) > label:hover, /* hover current star */
+.rating1:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating1 > input:checked + label:hover, /* hover current star when changing rating */
+.rating1 > input:checked ~ label:hover,
+.rating1 > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating1 > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+ */
 </style>
 <script src="jquery-3.5.1.min.js"></script>
 </head>
@@ -148,30 +184,35 @@ fieldset.*, label {
 								<%-- 	<h3 id="movieNm"><%=list.get(a).getMovieNm()%></h3> --%>
 								<h3 class = "movieNm1" id="movieNm<%=cnt %>"><%=list.get(a).getMovieNm()%></h3>
 									<p><%=list.get(a).getGenre()%></p>
-								<!--<form action="StarRatingService.do" name="StarRatingService">  -->
-								<fieldset class="rating.<%=cnt %>">
-									<input type="radio" id="star5" name="rating" value="5" /><label
-										class="full" for="star5" title="Awesome - 5 stars"></label> <input
-										type="radio" id="star4half" name="rating" value="4.5" /><label
-										class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-									<input type="radio" id="star4" name="rating" value="4" /><label
-										class="full" for="star4" title="Pretty good - 4 stars"></label>
-									<input type="radio" id="star3half" name="rating" value="3.5" /><label
-										class="half" for="star3half" title="Meh - 3.5 stars"></label>
-									<input type="radio" id="star3" name="rating" value="3" /><label
-										class="full" for="star3" title="Meh - 3 stars"></label> <input
+							
+								
+								<fieldset class="rating<%=cnt %>" >
+									<input type="radio" id="star1" name="rating" value="1" />
+									<label class="full" for="star1" title="Sucks big time - 1 star"></label>
+									<input type="radio" id="star2" name="rating" value="2" />
+									<label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+									<input type="radio" id="star3" name="rating" value="3" />
+									<label class="full" for="star3" title="Meh - 3 stars"></label>
+									<input type="radio" id="star4" name="rating" value="4" />
+									<label class="full" for="star4" title="Pretty good - 4 stars"> </label>	
+									<input type="radio" id="star5" name="rating" value="4" />
+									<label class="full" for="star5" title="Awesome - 5 stars"> </label>	
+										 <!-- <input type="radio" id="star4half" name="rating" value="4.5" /><label
+										class="half" for="star4half" title="Pretty good - 4.5 stars"></label> -->
+									
+									<!-- <input type="radio" id="star3half" name="rating" value="3.5" /><label
+										class="half" for="star3half" title="Meh - 3.5 stars"></label> -->
+									<!--  <input
 										type="radio" id="star2half" name="rating" value="2.5" /><label
-										class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-									<input type="radio" id="star2" name="rating" value="2" /><label
-										class="full" for="star2" title="Kinda bad - 2 stars"></label>
-									<input type="radio" id="star1half" name="rating" value="1.5" /><label
-										class="half" for="star1half" title="Meh - 1.5 stars"></label>
-									<input type="radio" id="star1" name="rating" value="1" /><label
-										class="full" for="star1" title="Sucks big time - 1 star"></label>
-									<input type="radio" id="starhalf" name="rating" value="0.5" /><label
-										class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+										class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> -->
+									
+								<!-- 	<input type="radio" id="star1half" name="rating" value="1.5" /><label
+										class="half" for="star1half" title="Meh - 1.5 stars"></label> -->
+									
+									<!-- <input type="radio" id="starhalf" name="rating" value="0.5" /><label
+										class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label> -->
 								</fieldset>
-								<!--</form>  -->
+								
 								<h1 id="starTxt<%=cnt %>"></h1>
 								<%cnt++; %>
 								
@@ -197,17 +238,16 @@ fieldset.*, label {
  		
 		
 		var num;
-
-		
 		let p = document.querySelector('#starTxt'+num);
-		$('div.caption').on('click', function() {
+
+	
+ 		$('div.caption').off('click').on('click', function() { 
 			
 			console.log($(this).attr("id"))
 			var click = $(this).attr("id");
 			var tmp = click.split("caption");
 			num = tmp[1];
 			console.log("num°ª Ãâ·Â : "+num);
-			
 			//var click = $('h3').attr("id");
 			//var click = $('fieldset').attr("class");
 			//console.log(click);
@@ -261,9 +301,8 @@ fieldset.*, label {
 				}
 			}
 			//alert($('input[type=radio]'));
+		
 			
-				
-	
 		})
 	
 	</script>
