@@ -1942,7 +1942,7 @@
 /* Box */
 
 	.box {
-		width: 1030px;
+		width: 100%;
 		border-radius: 10px;
 		border: solid 1px;
 		padding: 1.5em;
@@ -1967,7 +1967,19 @@
 	}
 
 /* Button */
+	input[type="file"].icon:before,
+			button.icon::before,
+			#file-upload-button{
+				
+				margin-right: 13em;
 
+			}
+	.wrapper.style1 input[type="file"].alt,
+	.wrapper.style1 .button.special.icon.fa-search{
+					background-color: transparent;
+					box-shadow:inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+				}
+	
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
