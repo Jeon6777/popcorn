@@ -17,6 +17,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
 <style>
 
 
@@ -151,9 +155,26 @@ star-input>.input.focus {
 	ArrayList<MovieDTO> list = dao.allMovie("movie");
 	
 	%>
-	<header>
-	<h1 style = "text-align: center; color: white; font-size: 50px;">영화에 평점을 입력하세요</h1>
+	
+		<!-- Header -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="main.jsp">pop <span>('corn')</span></a>
+		</h1>
+		<a href="#menu">Menu</a>
 	</header>
+
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="main.jsp">메인</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
+			<li><a href="generic.jsp">Generic</a></li>
+			<li><a href="elements.jsp">Elements</a></li>
+		</ul>
+	</nav>
+	<div style=" margin-top: 90px;">
+	<h1 style = "text-align: center; color: white; font-size: 50px;">영화에 평점을 입력하세요</h1>
+	</div>
 	<div>
 		<table>
 			<%
@@ -220,11 +241,21 @@ star-input>.input.focus {
 			%>
 		</table>
 	</div>
-
-		<script src="js/jquery-1.11.3.min.js"></script>
-		<script src="js/star.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/scroll3.js"></script>
+	<script src="assets/js/scroll2.js"></script>
+	<script src="assets/js/scroll.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/star.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

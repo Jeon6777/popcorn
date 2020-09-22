@@ -34,8 +34,8 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="main.jsp">Home</a></li>
-			<li><a href="myPage.jsp">My Page</a></li>
+			<li><a href="main.jsp">메인</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="elements.jsp">Elements</a></li>
 		</ul>
@@ -136,30 +136,6 @@
 							<%
 								}
 							%>
-							<!-- <tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr>
-      									<tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr>
-      									<tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr>
-      									<tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr>
-      									<tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr>
-      									<tr>
-        									<th class="cell1 fixed_col" scope="row">농구</th>
-        									<td class="cell2">마이클 조던</td>
-      									</tr> -->
 						</table>
 					</div>
 				</div>
