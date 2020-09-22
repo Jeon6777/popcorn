@@ -26,7 +26,7 @@
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 	<!-- Header -->
-	<header id="header" class="alt">
+	<header id="header" class="alt" style="z-index: 10002;">
 		<h1>
 			<a href="main.jsp">pop <span>('corn')</span></a>
 		</h1>
@@ -47,8 +47,8 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="main.jsp">Home</a></li>
-			<li><a href="myPage.jsp">My Page</a></li>
+			<li><a href="main.jsp">메인</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="elements.jsp">Elements</a></li>
 		</ul>
@@ -285,7 +285,7 @@
 				href="https://coverr.co">Coverr</a>.
 		</div>
 	</footer>
-<a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10002;" onfocus='this.blur()'>
+<a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
 <img src="img/top.png" style="width:100px; height:100px; border-radius: 15px;"/></a>
 
 	<!-- Scripts -->
