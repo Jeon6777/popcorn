@@ -241,6 +241,8 @@ star-input>.input.focus {
 			%>
 		</table>
 	</div>
+	<a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
+<img src="img/top.png" style="width:100px; height:100px; border-radius: 15px;"/></a>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

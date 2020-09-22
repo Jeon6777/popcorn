@@ -202,7 +202,8 @@
 		</table>
 	</div>
 </footer>
-
+<a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
+<img src="img/top.png" style="width:100px; height:100px; border-radius: 15px;"/></a>
 	<!-- Scripts -->
 	<script src="assets/js/scroll.js"></script>
 	<script src="assets/js/jquery.min.js"></script>

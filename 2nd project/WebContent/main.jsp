@@ -26,7 +26,7 @@
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 	<!-- Header -->
-	<header id="header" class="alt" style="z-index: 10002;">
+	<header id="header" class="alt">
 		<h1>
 			<a href="main.jsp">pop <span>('corn')</span></a>
 		</h1>
