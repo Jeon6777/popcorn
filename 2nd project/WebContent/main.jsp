@@ -57,15 +57,14 @@
 			
 			if(info.getId().equals("admin")){ %>
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="main.jsp">Home</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="Admin.jsp">admin</a></li>
+			<li><a href="Admin.jsp">관리자 모드</a></li>
 			
 			
 		<%}else{%>
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="myPage.jsp">회원정보 수정</a></li>
-			<li><a href="포인트.jsp">취향 입력하기</a></li>
+			<li><a href="Taste.jsp">취향 입력하기</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
 			<%}
 			}%>
@@ -138,10 +137,10 @@
 	</section>
 
 	<!-- Main -->
+<section class="wrapper style1">
 	<div id="wrapper" class="inner, main">
 		<!-- One -->
 		<!-- Wrapper -->
-		<section class="wrapper style1">
 			<header class="align-center">
 				<h2 class="h2_1">현재 상영작</h2>
 				<p></p>
@@ -206,14 +205,12 @@
 					%>
 				</div>
 			</section>
-		</section>
 	</div>
 	<!-- One -->
-
+	<hr>
 	<!-- Wrapper -->
 	
 	<div id="wrapper1" class="inner, main">
-		<section class="wrapper style1">
 			<header class="align-center">
 				<h2 class="h2_1">개봉 예정작</h2>
 				<p></p>
@@ -280,12 +277,10 @@
 
 				</div>
 			</section>
-		</section>
 	</div>
-	
+	<hr>
 
 	<div id="wrapper2" class="inner, main">
-		<section class="wrapper style1" style="width: 100%;">
 			<header class="align-center">
 				<h2 class="h2_1">추천영화</h2>
 				<p></p>
@@ -324,38 +319,34 @@
 				<h1 style="text-align:center; font-size: 25px;">로그인을 해주세요</h1>
 				<h1 style="text-align:center; font-size: 25px;"><a href="#menu2">로그인하기</a></h1>
 			<%}%>
-		</section>
 	</div>
+</section>
 
 	<!-- Footer -->
 	<footer id="footer">
-		<div class="inner">
+			<div class="inner">
 			<div class="flex flex-3">
 				<div class="col">
-					<h3>Vestibullum</h3>
+					<h3>팀장</h3>
 					<ul class="alt">
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						<li><a href="#">Vis id faucibus montes tempor</a></li>
-						<li><a href="#">Massa amet lobortis vel.</a></li>
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">전영욱</a></li>
+						<li><a href="#"></a></li>
 					</ul>
 				</div>
 				<div class="col">
-					<h3>Lobortis</h3>
+					<h3>조원</h3>
 					<ul class="alt">
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						<li><a href="#">Vis id faucibus montes tempor</a></li>
-						<li><a href="#">Massa amet lobortis vel.</a></li>
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">국아경</a></li>
+						<li><a href="#">박재호</a></li>
+						
 					</ul>
 				</div>
 				<div class="col">
-					<h3>Accumsan</h3>
+					<h1></h1>
+					<br>
 					<ul class="alt">
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						<li><a href="#">Vis id faucibus montes tempor</a></li>
-						<li><a href="#">Massa amet lobortis vel.</a></li>
-						<li><a href="#">Nascetur nunc varius commodo.</a></li>
+						<li><a href="#">조문형</a></li>
+						<li><a href="#"></a></li>
 					</ul>
 				</div>
 			</div>

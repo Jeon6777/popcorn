@@ -42,10 +42,10 @@
 	</nav>
 
 	<!-- Main -->
+<section class="wrapper style1">
 	<div id="main">
 
 		<!-- One -->
-		<section class="wrapper style1">
 			<div class="inner">
 				<header class="align-center">
 					<h3><%=info.getNick()%>
@@ -106,11 +106,10 @@
 				<input style="margin-left: 270px;" type="submit" value="회원 정보 수정"
 					class="button special fit"> <input type="button"
 					value="뒤로가기" onclick="history.back(-1);" class="button special fit">
-		</section>
 		</form>
-
+	 <hr>
 		<!-- Three -->
-		<section class="wrapper ">
+		
 			<header class="align-center">
 				<h2 class="h2_1" style="text-align: center">나의 한줄평</h2>
 			</header>
@@ -140,10 +139,10 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		
 
 	</div>
-
+   <hr>
 	<!-- Footer -->
 	<header class="align-center">
 		<h2 class="h2_1" style="text-align: center">내가 평가한 영화</h2>
@@ -202,6 +201,7 @@
 		</table>
 	</div>
 </footer>
+</section>
 <a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
 <img src="img/top.png" style="width:100px; height:100px; border-radius: 15px;"/></a>
 	<!-- Scripts -->
