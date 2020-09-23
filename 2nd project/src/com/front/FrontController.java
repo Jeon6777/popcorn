@@ -16,6 +16,7 @@ import com.cont.LoginService;
 import com.cont.LogoutService;
 import com.cont.StarRatingService;
 import com.cont.UpdateService;
+import com.cont.UploadScreenService;
 import com.DAO.MemberDAO;
 import com.DAO.MovieDAO;
 import com.DAO.GradeDAO;
@@ -40,6 +41,7 @@ public class FrontController extends HttpServlet {
 		map.put("UpdateService.do",new UpdateService());
 		map.put("LoginService.do",new LoginService());
 		map.put("StarRatingService.do", new StarRatingService());
+		map.put("UploadScreenService.do", new UploadScreenService());
 	}
 
 

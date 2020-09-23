@@ -96,7 +96,30 @@ public class MovieDAO {
 		return cnt;
 		
 	}
-
+	//관리자 기능에서 csv파일 업로드시 상영작 DB변경
+	public int uploadScreen(MovieDTO dto,int no) {
+		getConn();
+		String sql = "update screen set movienm=?,director=?,genre=?,actor=?,opendt=?,img=? where movie_no=?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getMovieNm());
+			pst.setString(2, dto.getDirector());
+			pst.setString(3, dto.getGenre());
+			pst.setString(4, dto.getActor());
+			pst.setString(5, dto.getOpendt());
+			pst.setString(6, dto.getImg());
+			pst.setInt(7, no);
+			
+			cnt = pst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return cnt;
+	}
 	
 	private void getConn() {
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";

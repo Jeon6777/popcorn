@@ -23,6 +23,14 @@ public class MovieDTO {
 		this.opendt = opendt;
 		this.img = img;
 	}
+	public MovieDTO(String movieNm, String director, String genre, String actor, String opendt, String img) {
+		this.movieNm = movieNm;
+		this.director = director;
+		this.genre = genre;
+		this.actor = actor;
+		this.opendt = opendt;
+		this.img = img;
+	}
 	public int getNo() {
 		return no;
 	}
