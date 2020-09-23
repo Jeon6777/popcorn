@@ -34,20 +34,20 @@ img {
 
 body {
 	margin: 20px;
-	background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
-	background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
-	background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
-	background-image: url("images/overlay.png"), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg.jpg");
+	background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
+	background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
+	background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
+	background-image: url("images/overlay.png"), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
 	background-position: top left, bottom left, auto;
 	background-size: auto, 100% 100%, cover;
 	background-attachment: fixed;
 	background-repeat: repeat, no-repeat, auto;
 	position: relative;
-	background-color: #150C07;
+	
 	line-height: 1.75em;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background: #020B13;
+	
 	
 }
 
@@ -140,7 +140,8 @@ fieldset, label {
 <script src="jquery-3.5.1.min.js"></script>
 </head>
 <body>
-
+	
+	
 
 	<%
 		MovieDAO dao = new MovieDAO();
@@ -232,6 +233,10 @@ fieldset, label {
 				}
 			%>
 		</table>
+		<h2>
+			<a href="main.jsp" style="margin-left: 50%;color: white;">저장하기</a>
+		</h2>
+		
 	</div>
 	
 		<script>
@@ -306,7 +311,7 @@ fieldset, label {
 		})
 	
 	</script>
-
+	
 
 </body>
 </html>

@@ -58,7 +58,7 @@
 			if(info.getId().equals("admin")){ %>
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="Admin.jsp">관리자 모드</a></li>
+			<li><a href="admin.jsp">관리자 모드</a></li>
 			
 			
 		<%}else{%>
@@ -324,7 +324,7 @@
 
 	<!-- Footer -->
 	<footer id="footer">
-			<div class="inner">
+		<div class="inner">
 			<div class="flex flex-3">
 				<div class="col">
 					<h3>팀장</h3>
