@@ -51,8 +51,8 @@
 	</nav>
 
 	<!-- Main -->
+<section class="wrapper style1">
 	<div id="main">
-		<section class="wrapper style1">
 			<div class="inner">
 				<header class="align-center">
 					<h2 class="h2_1">관리자 Mode</h2>
@@ -122,12 +122,12 @@
 					</div>
 				</div>
 				<hr />
-		</section>
+		
 	</div>
 	<div id="wrapper" class="inner, main">
 		<!-- One -->
 		<!-- Wrapper -->
-		<section class="wrapper style1">
+		
 			<header class="align-center">
 				<h2 class="h2_1">현재 상영작</h2>
 				<p></p>
@@ -162,10 +162,11 @@
 					%>
 				</div>
 			</section>
-		</section>
+		
 	</div>
+	<hr>
 	<div id="wrapper1" class="inner, main">
-		<section class="wrapper style1">
+		
 			<header class="align-center">
 				<h2 class="h2_1">개봉 예정작</h2>
 				<p></p>
@@ -197,9 +198,9 @@
  --%>
 				</div>
 			</section>
-		</section>
 	</div>
 
+</section>
 
 
 
