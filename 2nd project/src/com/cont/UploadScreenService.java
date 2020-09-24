@@ -61,7 +61,7 @@ public class UploadScreenService implements Command{
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 
-		ArrayList<String[]> list = run("C:/Users/SMT058/Downloads/data.csv", "UTF-8");
+		ArrayList<String[]> list = run("C:/Users/SMT012/Downloads/data.csv", "UTF-8");
 		
 		try {
 			System.out.println("¿µÈ­°¹¼ö: "+list.size());

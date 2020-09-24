@@ -1,3 +1,4 @@
+<%@page import="com.DTO.MemberDTO"%>
 <%@page import="com.DTO.MovieDTO"%>
 <%@page import="java.util.Random"%>
 <%@page import="java.util.ArrayList"%>
@@ -140,8 +141,6 @@ fieldset, label {
 <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-	
-	
 
 	<%
 		MovieDAO dao = new MovieDAO();
@@ -149,8 +148,13 @@ fieldset, label {
 	%>
 	<header>
 		<h1 style="text-align: center; color: white; font-size: 50px;">영화에
-			평점을 입력하세요</h1>
+			평점을 입력하세요!	            
+			<a onClick="window.location.reload()" style="cursor: pointer;"><img src = "images/refresh.png" style="width:80px; height:80px"></a>
+			</h1>
 	</header>
+	
+			<center>
+			</center>
 	<div>
 		<table>
 			<%
@@ -181,14 +185,14 @@ fieldset, label {
 								<a href="img/<%=print%>.jpg"> <img src="img/<%=print%>.jpg"
 									alt="movie">
 								</a>
-								<div class="caption" id = "caption<%=cnt %>" style="height: 150px;">
+								<div class="caption" id = "caption<%=cnt %>" style="height: 250px;">
 								<%-- 	<h3 id="movieNm"><%=list.get(a).getMovieNm()%></h3> --%>
-								<h3 class = "movieNm1" id="movieNm<%=cnt %>"><%=list.get(a).getMovieNm()%></h3>
+								<h2 class = "movieNm1" id="movieNm<%=cnt %>"><%=list.get(a).getMovieNm()%></h2>
 									<p><%=list.get(a).getGenre()%></p>
 							
 								
-								<fieldset class="rating<%=cnt %>" >
-									<input type="radio" id="star1" name="rating" value="1" />
+								<fieldset class="rating<%=cnt%> ">
+									<input type="radio" id="star1" name="rating" value="1"/>
 									<label class="full" for="star1" title="Sucks big time - 1 star"></label>
 									<input type="radio" id="star2" name="rating" value="2" />
 									<label class="full" for="star2" title="Kinda bad - 2 stars"></label>
@@ -196,7 +200,7 @@ fieldset, label {
 									<label class="full" for="star3" title="Meh - 3 stars"></label>
 									<input type="radio" id="star4" name="rating" value="4" />
 									<label class="full" for="star4" title="Pretty good - 4 stars"> </label>	
-									<input type="radio" id="star5" name="rating" value="4" />
+									<input type="radio" id="star5" name="rating" value="5" />
 									<label class="full" for="star5" title="Awesome - 5 stars"> </label>	
 										 <!-- <input type="radio" id="star4half" name="rating" value="4.5" /><label
 										class="half" for="star4half" title="Pretty good - 4.5 stars"></label> -->
@@ -233,9 +237,10 @@ fieldset, label {
 				}
 			%>
 		</table>
-		<h2>
-			<a href="main.jsp" style="margin-left: 50%;color: white;">저장하기</a>
-		</h2>
+		<h1 style="margin-left: 41.5%;">
+			<input type="button" value="저장하기" href="main.jsp" onclick="alert('저장완료!')">
+			<input type="button" value="뒤로가기" onclick="history.back()">
+		</h1>
 		
 	</div>
 	
@@ -287,7 +292,7 @@ fieldset, label {
 			
 					
 					$.ajax({
-						type : "POST",
+						type : "GET",
 						url : "StarRatingService.do",
 						data : {
 							starRating : star,

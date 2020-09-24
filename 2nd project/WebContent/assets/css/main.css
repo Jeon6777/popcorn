@@ -5285,10 +5285,7 @@ body.is-menu3-visible #menu3 {
 		}
 
 	}
-
 	
-	
-
 /* Scroll Zone */
 
 .scrollZone {
@@ -5300,13 +5297,17 @@ body.is-menu3-visible #menu3 {
 	cursor: -ms-grab;
 	cursor: grab;
 	z-index: 10001;
-	border: 3px solid red;
-	
-	
+}
+
+.left{
+	background-image: url('../images/left.png')
+}
+
+.right{
+	background-image: url('../iamges/right.png')
 }
 
 	.scrollZone.left {
-	
 		top: 0;
 		left: 0;
 		bottom: 0;

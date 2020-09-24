@@ -35,8 +35,7 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="generic.jsp">Generic</a></li>
-			<li><a href="point.jsp">취향 입력하기</a></li>
+			<li><a href="Taste.jsp">취향 입력하기</a></li>
 		</ul>
 	</nav>
 
@@ -107,41 +106,44 @@
 					value="뒤로가기" onclick="history.back(-1);" class="button special fit">
 		</form>
 	 <hr>
-		<!-- Three -->
+		   <!-- Three -->
+      
+         <header class="align-center">
+            <h2 class="h2_1" style="text-align: center">나의 한줄평</h2>
+         </header>
+         <div class="inner">
+            <div class="tb_wrap">
+               <div class="tb_box">
+                  <table class="tb">
+
+
+                     <tr class="fixed_top">
+                        <th class="cell1 cross" scope="col">영화 제목</th>
+                        <th class="cell2" scope="col">한줄평</th>
+                     </tr>
+                     <%
+                        NoteDAO dao = new NoteDAO();
+                     ArrayList<String[]> noteList = dao.getMyNote(info);
+                     for (int i = 0; i < noteList.size(); i++) {
+                     %>
+                     <tr>
+                        <th class="cell1 fixed_col" scope="row"><%=noteList.get(i)[0]%></th>
+                        <td class="cell2"><%=noteList.get(i)[1]%></td>
+                     </tr>
+                     <%
+                        }
+                     %>
+                  </table>
+               </div>
+            </div>
+         </div>
+      
+
+   </div>
 		
-			<header class="align-center">
-				<h2 class="h2_1" style="text-align: center">나의 한줄평</h2>
-			</header>
-			<div class="inner">
-				<div class="tb_wrap">
-					<div class="tb_box">
-						<table class="tb">
-
-
-							<tr class="fixed_top">
-								<th class="cell1 cross" scope="col">영화 제목</th>
-								<th class="cell2" scope="col">한줄평</th>
-							</tr>
-							<%
-								NoteDAO dao = new NoteDAO();
-							ArrayList<String[]> noteList = dao.getMyNote(info);
-							for (int i = 0; i < noteList.size(); i++) {
-							%>
-							<tr>
-								<th class="cell1 fixed_col" scope="row"><%=noteList.get(i)[0]%></th>
-								<td class="cell2"><%=noteList.get(i)[1]%></td>
-							</tr>
-							<%
-								}
-							%>
-						</table>
-					</div>
-				</div>
-			</div>
 		
 
 	</div>
-   <hr>
 	<!-- Footer -->
 	<header class="align-center">
 		<h2 class="h2_1" style="text-align: center">내가 평가한 영화</h2>

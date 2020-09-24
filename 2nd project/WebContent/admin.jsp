@@ -146,18 +146,6 @@
 					</div>
 				</section>
 			</div>
-			<div id="wrapper1" class="inner, main">
-				<header class="align-center">
-					<h2 class="h2_1">개봉 예정작</h2>
-					<p></p>
-				</header>
-				<!--2열 비디오 섹션-->
-				<!-- Main -->
-				<section id="main1">
-					<!-- Items -->
-					<div class="items"></div>
-				</section>
-			</div>
 	</section>
 
 

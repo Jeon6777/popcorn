@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
 </head>
-<body class="is-preload ">
+<body class="is-preload">
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
@@ -57,7 +57,6 @@
 			
 			if(info.getId().equals("admin")){ %>
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="admin.jsp">관리자 모드</a></li>
 			
 			
@@ -65,7 +64,6 @@
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="myPage.jsp">회원정보 수정</a></li>
 			<li><a href="Taste.jsp">취향 입력하기</a></li>
-			<li><a href="generic.jsp">Generic</a></li>
 			<%}
 			}%>
 			
@@ -127,10 +125,11 @@
 			<header>
 				<h1>영화를 추천 받으세요!</h1>
 				<p>
-					자신의 취향을 입력하고<br/> 나와 맞는 영화를 찾으세요.
+					자신의 취향을 입력하고 영화를 추천 받아보세요<br/>
+					현재 상영 영화와 예고편을 확인하세요
 				</p>
 			</header>
-			<a href="#wrapper" class="button big alt scrolly">영화 목록 보기</a> <a
+			<a href="#wrapper2" class="button big alt scrolly">영화 추천 목록</a> <a
 				href="point.jsp" class="button big alt scrolly">취향 입력하기</a>
 		</div>
 
@@ -138,6 +137,57 @@
 
 	<!-- Main -->
 <section class="wrapper style1">
+	<div id="wrapper2" class="inner, main">
+			<header class="align-center">
+				<h2 class="h2_1">추천영화</h2>
+				<p></p>
+			</header>
+			<!--2열 비디오 섹션-->
+			<!-- Main -->
+			
+			<% 
+			MovieDAO dao = new MovieDAO();
+			ArrayList<String> list = dao.movieNmAll("screen");
+			ArrayList<String> list1 = dao.movieNmAll("movie");
+			
+			if (info != null){ %>
+			<section id="main0">
+				<!-- Items -->
+				<div class="items">
+					<%				
+				
+
+						Random rd = new Random();
+					int c = rd.nextInt(400);
+					%>
+					<%
+						for (int i = 0; i < list.size(); i++) {
+					%>
+					<article class="item thumb span-1"
+						style="width: 280px; height: 400px;">
+						<h2 class="h2"><%=list1.get(c)%></h2>
+						<a href="img/<%=list1.get(c)%>.jpg" class="image2"><img
+							class="img" src="img/<%=list1.get(c)%>.jpg" alt=""></a>
+					</article>
+					<%
+						c = rd.nextInt(400);
+					/* if (c < list.size()) {
+						c++;
+					} */
+					}
+					%>
+
+				</div>
+			</section>
+			<%}else{%>
+				<h1 style="text-align:center; font-size: 25px;">로그인을 해주세요</h1>
+				<h1 style="text-align:center; font-size: 25px;"><a href="#menu2">로그인하기</a></h1>
+			<%}%>
+	</div>
+	<!-- One -->
+	<hr>
+	<!-- Wrapper -->
+	
 	<div id="wrapper" class="inner, main">
 		<!-- One -->
 		<!-- Wrapper -->
@@ -151,8 +201,7 @@
 				<!-- Items -->
 				<div class="items">
 					<%
-						MovieDAO dao = new MovieDAO();
-					ArrayList<String> list = dao.movieNmAll("screen");
+					
 					%>
 					<h1 style="text-align: center"></h1>
 
@@ -206,10 +255,8 @@
 				</div>
 			</section>
 	</div>
-	<!-- One -->
-	<hr>
-	<!-- Wrapper -->
 	
+	<hr>
 	<div id="wrapper1" class="inner, main">
 			<header class="align-center">
 				<h2 class="h2_1">개봉 예정작</h2>
@@ -222,7 +269,6 @@
 				<div class="items">
 					<%
 						int b = 0;
-					ArrayList<String> list1 = dao.movieNmAll("movie");
 					%>
 					<%
 						for (int i = list.size(); i < 21; i++) {
@@ -278,48 +324,8 @@
 				</div>
 			</section>
 	</div>
-	<hr>
 
-	<div id="wrapper2" class="inner, main">
-			<header class="align-center">
-				<h2 class="h2_1">추천영화</h2>
-				<p></p>
-			</header>
-			<!--2열 비디오 섹션-->
-			<!-- Main -->
-			
-			<% if (info != null){ %>
-			<section id="main0">
-				<!-- Items -->
-				<div class="items">
-					<%
-						Random rd = new Random();
-					int c = rd.nextInt(400);
-					%>
-					<%
-						for (int i = 0; i < list.size(); i++) {
-					%>
-					<article class="item thumb span-1"
-						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list1.get(c)%></h2>
-						<a href="img/<%=list1.get(c)%>.jpg" class="image2"><img
-							class="img" src="img/<%=list1.get(c)%>.jpg" alt=""></a>
-					</article>
-					<%
-						c = rd.nextInt(400);
-					/* if (c < list.size()) {
-						c++;
-					} */
-					}
-					%>
 
-				</div>
-			</section>
-			<%}else{%>
-				<h1 style="text-align:center; font-size: 25px;">로그인을 해주세요</h1>
-				<h1 style="text-align:center; font-size: 25px;"><a href="#menu2">로그인하기</a></h1>
-			<%}%>
-	</div>
 </section>
 
 	<!-- Footer -->
