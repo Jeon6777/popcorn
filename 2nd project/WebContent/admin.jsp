@@ -112,7 +112,7 @@
 					<div class="1u$ 12u$(medium)" style="padding: 0 0 0 12px;">
 						<br> <br>
 						<ul class="actions">
-							<li><button onclick="screenPrint()" class="button special icon fa-search">상영작 출력</li>
+							<li><button onclick="screenPrint(<%=today %>)" class="button special icon fa-search">상영작 출력</li>
 							<br><br>
 							<li><button onclick ="downloadCSV()" class="button icon fa-download">파일 다운로드</a></li>
 							<br><br>
@@ -244,12 +244,14 @@
 	   /* var urlList = [20193666, 20201687, 20183813, 20197922, 20199883, 20189973, 20198484, 20196773, 20209022, 20197032];  */
     var array = [];
 	
-    console.log("오늘 날짜 2: <%=today%>");
     
+    console.log("오늘 날짜 2: <%=today%>");
     var todayList = [];
+     
+     
      $.ajax({
     	
-   		url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=eed9023203d880733508fd00373d6f6f&multiMovieYn=N&repNationCd=K&targetDt=20200921",
+   		url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=eed9023203d880733508fd00373d6f6f&multiMovieYn=N&repNationCd=K&targetDt=20200923",
    		type : "get",
    		success : function(res){
    			var list = res.boxOfficeResult.dailyBoxOfficeList;
@@ -264,10 +266,10 @@
    				
      });
      
-     
-         function screenPrint(){
+         function screenPrint(today){
         	//console.log("screenPrint 실행");
         	//console.log(todayList.length);
+        	console.log("버튼 누를시 오늘 날짜 출력 : "+today)
         	for (var i = 0 ; i < todayList.length; i++) {
         		  (function(i){ 
         	console.log("반복문시작")
