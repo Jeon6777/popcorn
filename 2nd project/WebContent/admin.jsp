@@ -13,7 +13,7 @@
 -->
 <html>
 <head>
-<title>Elements - Broadcast by TEMPLATED</title>
+<title>관리자 페이지</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -23,15 +23,13 @@
 <body class="subpage">
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-			
-		Calendar cal = Calendar.getInstance();
-		int year = cal.get ( cal.YEAR );
-		int month = cal.get ( cal.MONTH ) + 1 ;
-		int date = cal.get ( cal.DATE ) -1 ;
-		String today = year+""+month+date;
-		System.out.println("오늘 날짜 : "+ today);
 
-
+	Calendar cal = Calendar.getInstance();
+	int year = cal.get(cal.YEAR);
+	int month = cal.get(cal.MONTH) + 1;
+	int date = cal.get(cal.DATE) - 1;
+	String today = year + "0" + month + date;
+	//System.out.println("오늘 날짜 : " + today);
 	%>
 	<!-- Header -->
 	<header id="header" class="alt">
@@ -51,8 +49,8 @@
 	</nav>
 
 	<!-- Main -->
-<section class="wrapper style1">
-	<div id="main">
+	<section class="wrapper style1">
+		<div id="main">
 			<div class="inner">
 				<header class="align-center">
 					<h2 class="h2_1">관리자 Mode</h2>
@@ -84,26 +82,6 @@
 											<th>오픈 날짜</th>
 										</tr>
 									</thead>
-									
-									<tr id = "firstTable">
-										
-									</tr>
-<%-- 	테이블 작성코드								<%
-								for(int i=0; i< 10; i++){ %>
-									<tbody id="movieDesc<%=i%>">
-										<tr>
-											<td id = "temp0">1</td>
-											<td>2</td>
-											<td>3</td>
-											<td>4</td>
-											<td>5</td>
-										</tr>
-
-									</tbody>
-									<%}
-							
-							%> --%>
-
 
 								</table>
 							</div>
@@ -112,71 +90,75 @@
 					<div class="1u$ 12u$(medium)" style="padding: 0 0 0 12px;">
 						<br> <br>
 						<ul class="actions">
-							<li><button onclick="screenPrint(<%=today %>)" class="button special icon fa-search">상영작 출력</li>
-							<br><br>
-							<li><button onclick ="downloadCSV()" class="button icon fa-download">파일 다운로드</a></li>
-							<br><br>
-							<li><a href="UploadScreenService.do" class="button alt icon fa-check">파일 업로드</a></li>
-							
+							<li><button onclick="screenPrint()"
+									class="button special icon fa-search">상영작 출력</li>
+							<br>
+							<br>
+							<li><button onclick="downloadCSV()"
+									class="button icon fa-download">
+									파일 다운로드</a></li>
+							<br>
+							<br>
+							<li><a href="UploadScreenService.do"
+								class="button alt icon fa-check">파일 업로드</a></li>
+
 
 						</ul>
 					</div>
 				</div>
 				<hr />
-	</div>
-	<div id="wrapper" class="inner, main">
-		<!-- One -->
-		<!-- Wrapper -->
-			<header class="align-center">
-				<h2 class="h2_1">현재 상영작</h2>
-				<p></p>
-			</header>
-			<!--2열 비디오 섹션-->
-			<!-- Main -->
-			<section id="main2">
-				<!-- Items -->
-				<div class="items">
-					<%
-						MovieDAO dao = new MovieDAO();
-					ArrayList<String> list = dao.movieNmAll("screen");
-					%>
-					<h1 style="text-align: center"></h1>
+			</div>
+			<div id="wrapper" class="inner, main">
+				<!-- One -->
+				<!-- Wrapper -->
+				<header class="align-center">
+					<h2 class="h2_1">현재 상영작</h2>
+					<p></p>
+				</header>
+				<!--2열 비디오 섹션-->
+				<!-- Main -->
+				<section id="main2">
+					<!-- Items -->
+					<div class="items">
+						<%
+							MovieDAO dao = new MovieDAO();
+						ArrayList<String> list = dao.movieNmAll("screen");
+						%>
+						<h1 style="text-align: center"></h1>
 
-					<%
-						int a = 0;
-					for (int i = 0; i < list.size(); i++) {
-					%>
-					<article class="item thumb span-1"
-						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list.get(a)%></h2>
-						<a href="img/<%=list.get(a)%>.jpg" class="image2"> <img
-							class="img" src="img/<%=list.get(a)%>.jpg" alt="">
-						</a>
-					</article>
-					<%
-						if (a < list.size()) {
-						a++;
-					}
-					}
-					%>
-				</div>
-			</section>
-	</div>
-	<div id="wrapper1" class="inner, main">
-			<header class="align-center">
-				<h2 class="h2_1">개봉 예정작</h2>
-				<p></p>
-			</header>
-			<!--2열 비디오 섹션-->
-			<!-- Main -->
-			<section id="main1">
-				<!-- Items -->
-				<div class="items">
-
-				</div>
-			</section>
-	</div>
-</section>
+						<%
+							int a = 0;
+						for (int i = 0; i < list.size(); i++) {
+						%>
+						<article class="item thumb span-1"
+							style="width: 280px; height: 400px;">
+							<h2 class="h2"><%=list.get(a)%></h2>
+							<a href="img/<%=list.get(a)%>.jpg" class="image2"> <img
+								class="img" src="img/<%=list.get(a)%>.jpg" alt="">
+							</a>
+						</article>
+						<%
+							if (a < list.size()) {
+							a++;
+						}
+						}
+						%>
+					</div>
+				</section>
+			</div>
+			<div id="wrapper1" class="inner, main">
+				<header class="align-center">
+					<h2 class="h2_1">개봉 예정작</h2>
+					<p></p>
+				</header>
+				<!--2열 비디오 섹션-->
+				<!-- Main -->
+				<section id="main1">
+					<!-- Items -->
+					<div class="items"></div>
+				</section>
+			</div>
+	</section>
 
 
 
@@ -195,9 +177,9 @@
 				<div class="col">
 					<h3>조원</h3>
 					<ul class="alt">
-						<li><a href="#">국아경</a></li>
+						<li><a href="#">국경아</a></li>
 						<li><a href="#">박재호</a></li>
-						
+
 					</ul>
 				</div>
 				<div class="col">
@@ -242,34 +224,35 @@
 
 	<script>
 	   /* var urlList = [20193666, 20201687, 20183813, 20197922, 20199883, 20189973, 20198484, 20196773, 20209022, 20197032];  */
-    var array = [];
+
+	   var array = [];
 	
     
     console.log("오늘 날짜 2: <%=today%>");
     var todayList = [];
+     	
+      	window.onload = function () {
+     		var a = <%=today%>;
+     		console.log(a)
+     		  $.ajax({
+   	      		
+     				url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=eed9023203d880733508fd00373d6f6f&multiMovieYn=N&repNationCd=K&targetDt="+a,
+     				type : "get",
+     				success : function(res){
+     					var list = res.boxOfficeResult.dailyBoxOfficeList;
+     					for (var i = 0; i < list.length; i++) {
+     						todayList.push(list[i].movieCd);
+     						console.log(list[i].movieCd)
+    					}
+     				},
+    				error : function () {
+    					 alert("연결실패");                       
+    				}
+     						
+      		 });
+     	} 
      
-     
-     $.ajax({
-    	
-   		url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=eed9023203d880733508fd00373d6f6f&multiMovieYn=N&repNationCd=K&targetDt=20200923",
-   		type : "get",
-   		success : function(res){
-   			var list = res.boxOfficeResult.dailyBoxOfficeList;
-   			for (var i = 0; i < list.length; i++) {
-   				todayList.push(list[i].movieCd);
-   				console.log(list[i].movieCd)
-			}
-   		},
-		 error : function () {
-			 alert("연결실패");                       
-		}
-   				
-     });
-     
-         function screenPrint(today){
-        	//console.log("screenPrint 실행");
-        	//console.log(todayList.length);
-        	console.log("버튼 누를시 오늘 날짜 출력 : "+today)
+         function screenPrint(){
         	for (var i = 0 ; i < todayList.length; i++) {
         		  (function(i){ 
         	console.log("반복문시작")
