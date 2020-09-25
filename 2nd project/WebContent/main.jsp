@@ -73,7 +73,7 @@
 		<ul class="links">
 			<li><h5>로그인</h5></li>
 			<form action="LoginService.do" method="post">
-				<li><input name="id" type="text" placeholder="ID를 입력해주세요"></li>
+				<li><input style="background-color: white;" name="id" type="text" placeholder="ID를 입력해주세요"></li>
 				<li><input name="pw" type="password" placeholder="PW을 입력해주세요"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
 			</form>
@@ -138,10 +138,7 @@
 	<!-- Main -->
 <section class="wrapper style1">
 	<div id="wrapper2" class="inner, main">
-			<header class="align-center">
-				<h2 class="h2_1">추천영화</h2>
-				<p></p>
-			</header>
+			
 			<!--2열 비디오 섹션-->
 			<!-- Main -->
 			
@@ -151,6 +148,10 @@
 			ArrayList<String> list1 = dao.movieNmAll("movie");
 			
 			if (info != null){ %>
+			<header class="align-center">
+				<h2 class="h2_1">추천영화</h2>
+				<p></p>
+			</header>
 			<section id="main0">
 				<!-- Items -->
 				<div class="items">
@@ -179,10 +180,7 @@
 
 				</div>
 			</section>
-			<%}else{%>
-				<h1 style="text-align:center; font-size: 25px;">로그인을 해주세요</h1>
-				<h1 style="text-align:center; font-size: 25px;"><a href="#menu2">로그인하기</a></h1>
-			<%}%>
+			<%} %>
 	</div>
 	<!-- One -->
 	<hr>
