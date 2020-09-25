@@ -342,7 +342,7 @@
 				<div class="col">
 					<h3>조원</h3>
 					<ul class="alt">
-						<li><a href="#">국아경</a></li>
+						<li><a href="#">국경아</a></li>
 						<li><a href="#">박재호</a></li>
 						
 					</ul>
