@@ -35,7 +35,7 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="Taste.jsp">취향 입력하기</a></li>
+			<li><a href="Taste.jsp">평가하기</a></li>
 		</ul>
 	</nav>
 
@@ -58,12 +58,13 @@
 							<%=info.getId()%></h4>
 						<h5>비밀번호 변경</h5>
 						<div class="6u$ 12u$(xsmall)">
-							<input type="password" name="pw" id="pw" placeholder="새 비밀번호">
+							<input type="password" name="pw" id="pw" class="pw" placeholder="새 비밀번호">
 						</div>
 						<div class="6u$ 12u$(xsmall)">
-							<input type="password" name="pw_Check" id="pw_Check"
-								placeholder="새 비밀번호 확인">
+							<input type="password" name="pw_Check" id="pw_Check" class="pw" placeholder="새 비밀번호 확인" style="margin-bottom: 0px;">
+							 <span id="alert-danger" style="display: none; color: #d92742; font-size: 13px; "> ! 비밀번호가 일치하지 않습니다.</span>
 						</div>
+						<br>
 						<h5>닉네임</h5>
 						<div class="6u$ 12u$(xsmall)">
 							<input type="text" name="nick" id="nick"
@@ -215,6 +216,22 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+    $('.pw').focusout(function () {
+        var pwd1 = $("#pw").val();
+        var pwd2 = $("#pw_Check").val();
+ 
+        if ( pwd1 != '' && pwd2 == '' ) {
+            null;
+        } else if (pwd1 != "" || pwd2 != "") {
+            if (pwd1 == pwd2) {
+                $("#alert-danger").css('display', 'none');
+            } else {
+                $("#alert-danger").css('display', 'inline');
+            }
+        }
+    }); 
+	</script>
 
 </body>
 </html>
