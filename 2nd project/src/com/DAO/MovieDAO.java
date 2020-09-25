@@ -75,10 +75,10 @@ public class MovieDAO {
 		getConn();
 		String sql = "update "+DB_tableName+" set img = ? where img is null and movieNm Like ?";
 		try {
-			String img_name = URLEncoder.encode(movieNm, "EUC-KR");
+			//String img_name = URLEncoder.encode(movieNm, "EUC-KR");
 			pst = conn.prepareStatement(sql);
 			
-			pst.setString(1, img_name+".jpg");
+			pst.setString(1, movieNm+".jpg");
 			pst.setString(2, movieNm);
 			
 			cnt = pst.executeUpdate();
