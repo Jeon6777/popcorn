@@ -248,6 +248,37 @@
 				</ul>
 			</div>
 	</nav>
+	
+	
+	
+				
+				<%
+				
+				String arr[] = new String[3];
+											
+											String movie1 = null;
+				
+				if(info != null){%>
+				
+				
+				
+					<%
+					movie1 = request.getParameter("movie1");
+					String movie2 = request.getParameter("movie2");
+					String movie3 = request.getParameter("movie3");
+					System.out.println(movie1 + "test");
+					System.out.println(movie2 + " test");
+					System.out.println(movie3+ "TESt");
+					
+					
+					
+					arr[0] = movie1;
+					arr[1] = movie2;
+					arr[2] = movie3;
+				}
+				%>
+			
+			
 	<!-- Banner -->
 	<!--
 				비디오를 배경으로 사용하려면 데이터 비디오를 비디오 이름으로 설정하십시오.
@@ -272,6 +303,7 @@
 
 	<!-- Main -->
 <section class="wrapper style1">
+			
 	<div id="wrapper2" class="inner, main">
 
 			<!--2열 비디오 섹션-->
@@ -286,46 +318,51 @@
 			if (info != null){ %>
 			<header class="align-center">
 			<h2 class="h2_1">추천영화</h2>
-			<p></p>
+			
+			<form action="http://localhost:9000/find/movie" method ="post" accept-charset="UTF-8">
+					<input type = "radio" name = "b" value = "<%=info.getGenre()%>" checked="checked"> 
+					<input style = "width: 135px; margin-left:-67px; margin-top:-20px; position:absolute; z-index:10009;" type = "submit" value = "추천받기">
+			</form>
+			<br>
+						<h2>추천받기 버튼을 눌러주세요!</h2>
+			
 			</header>
 			<section id="main0">
+			
 				<!-- Items -->
 				<div class="items">
 					<%				
 				
 					String print = "";
-						Random rd = new Random();
-					int c = rd.nextInt(400);
 					%>
 					<%
+						for(int i =0 ;i<arr.length;i++){
 						
-						for (int i = 0; i < list.size(); i++) {
-							if (list1.get(c).contains(":")) {
-								String[] spl = list1.get(c).split(":");
-								print = spl[0].trim();
-								System.out.println(print);
-							} else {
-								print = list1.get(c);
-								System.out.println(print);
-							}
 					%>
+					<%if(movie1 != null){%>
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
-						<h2 class="h2"><%=list1.get(c)%></h2>
-						<a href="img/<%=print%>.jpg" class="image2"><img
-							class="img" src="img/<%=print%>.jpg" alt=""></a>
+						<h2 class="h2"><%=arr[i]%></h2>
+						<a href="img/<%=arr[i]%>.jpg" class="image2"><img
+							class="img" src="img/<%=arr[i]%>.jpg" alt=""></a>
 					</article>
-					<%
-						c = rd.nextInt(400);
+					
+					
+					<%}%>
+					
+						
+					<% 
+					}}
+						//c = rd.nextInt(400);
 					/* if (c < list.size()) {
 						c++;
 					} */
-					}
+					
 					%>
 
 				</div>
 			</section>
-			<%}%>
+			
 	</div>
 	<!-- One -->
 	<hr>
