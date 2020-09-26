@@ -87,7 +87,7 @@ fieldset, label {
 } 
 
 /***** CSS Magic to Highlight Stars on Hover *****/
-/* 
+
 .rating0 > input:checked ~ label, /* show gold star when clicked */
 .rating0:not(:checked) > label:hover, /* hover current star */
 .rating0:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
@@ -95,7 +95,7 @@ fieldset, label {
 .rating0 > input:checked + label:hover, /* hover current star when changing rating */
 .rating0 > input:checked ~ label:hover,
 .rating0 > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating0 > input:checked ~ label:hover ~ label { color: #FFED85;  }  */
+.rating0 > input:checked ~ label:hover ~ label { color: #FFED85;  }  
 
 
 /****** Style Star Rating Widget *****/

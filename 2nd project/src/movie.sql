@@ -8,6 +8,7 @@ drop sequence movie_seq;
 drop sequence screen_seq;
 drop sequence grade_seq;
 drop sequence note_seq;
+drop sequence comeoutmovie_seq;
 
 -- 테이블 생성
 -- 영화 테이블 생성

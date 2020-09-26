@@ -296,6 +296,7 @@
 					int c = rd.nextInt(400);
 					%>
 					<%
+						
 						for (int i = 0; i < list.size(); i++) {
 							if (list1.get(c).contains(":")) {
 								String[] spl = list1.get(c).split(":");
