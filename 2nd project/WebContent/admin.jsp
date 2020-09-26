@@ -29,6 +29,8 @@
 	int month = cal.get(cal.MONTH) + 1;
 	int date = cal.get(cal.DATE) - 1;
 	String today = year + "0" + month + date;
+	String printDay = year+"년     "+month+"월    "+date+"일\t"; 
+	System.out.println("박스오피스 날짜  : " + printDay);
 	//System.out.println("오늘 날짜 : " + today);
 	%>
 	<!-- Header -->
@@ -66,11 +68,11 @@
 					<div class="10u 12u$(medium)">
 						<input class="button special icon fa-search" name="file_name"
 							type="file" style="float: right;">
-						<h3>상영작 추가</h3>
+						<h3>상영작 관리</h3>
 
 						<div class="box">
 
-							<h4>다운로드 파일</h4>
+							<h4><%=printDay %> 박스 오피스</h4>
 							<div class="table-wrapper">
 								<table id="screenTable">
 									<thead>
@@ -96,11 +98,11 @@
 							<br>
 							<li><button onclick="downloadCSV()"
 									class="button icon fa-download">
-									파일 다운로드</a></li>
+									파일 다운로드</li>
 							<br>
 							<br>
 							<li><a href="UploadScreenService.do"
-								class="button alt icon fa-check">파일 업로드</a></li>
+								class="button alt icon fa-check">DB 업데이트</a></li>
 
 
 						</ul>
