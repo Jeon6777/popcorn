@@ -18,7 +18,9 @@ public class LoginService implements Command{
 
 	public String execut(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
+		System.out.println("로그인 id : "+id);
 		String pw = request.getParameter("pw");
+		System.out.println("로그인 pw : "+pw);
 		
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = new MemberDAO();
