@@ -45,7 +45,6 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">Home</a></li>
-			<li><a href="generic.jsp">Generic</a></li>
 			<li><a href="elements.jsp">°ü¸®ÀÚ Mode</a></li>
 		</ul>
 	</nav>
