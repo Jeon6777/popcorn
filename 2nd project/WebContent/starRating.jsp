@@ -5,6 +5,7 @@
 <%@page import="com.DAO.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +36,7 @@ img {
 
 body {
 	margin: 20px;
-	background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
-	background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
-	background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
-	background-image: url("images/overlay.png"), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("images/bg.jpg");
+	background-color : #151d25;
 	background-position: top left, bottom left, auto;
 	background-size: auto, 100% 100%, cover;
 	background-attachment: fixed;
@@ -64,7 +62,7 @@ fieldset, label {
 /* fieldset[class *="rating"] */
 /****** Style Star Rating Widget *****/
 
-/* .rating0 { 
+.rating0 { 
   border: none;
   float: left;
 }
@@ -86,7 +84,7 @@ fieldset, label {
 .rating0 > label { 
   color: #ddd; 
  float: right; 
-} */
+} 
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 /* 
@@ -149,7 +147,7 @@ fieldset, label {
 	<header>
 		<h1 style="text-align: center; color: white; font-size: 50px;">영화에
 			평점을 입력하세요!	            
-			<a onClick="window.location.reload()" style="cursor: pointer;"><img src = "images/refresh.png" style="width:80px; height:80px"></a>
+			<a onClick="window.location.reload()" style="cursor: pointer;"><img src = "images/refresh.png" style="width:50px; height:50px"></a>
 			</h1>
 	</header>
 	
@@ -185,13 +183,36 @@ fieldset, label {
 								<a href="img/<%=print%>.jpg"> <img src="img/<%=print%>.jpg"
 									alt="movie">
 								</a>
-								<div class="caption" id = "caption<%=cnt %>" style="height: 250px;">
+								<div class="caption" id = "caption<%=cnt %>" style="height: 200px;">
 								<%-- 	<h3 id="movieNm"><%=list.get(a).getMovieNm()%></h3> --%>
 								<h2 class = "movieNm1" id="movieNm<%=cnt %>"><%=list.get(a).getMovieNm()%></h2>
 									<p><%=list.get(a).getGenre()%></p>
 							
 								
 								<fieldset class="rating<%=cnt%> ">
+								<% if(cnt == 0){ %>
+									<input type="radio" id="star5" name="rating" value="5" />
+									<label class="full" for="star5" title="Awesome - 5 stars"> </label>	
+									<input type="radio" id="star4half" name="rating" value="4.5" /><label
+										class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+									<input type="radio" id="star4" name="rating" value="4" />
+									<label class="full" for="star4" title="Pretty good - 4 stars"> </label>	
+									<input type="radio" id="star3half" name="rating" value="3.5" /><label
+										class="half" for="star3half" title="Meh - 3.5 stars"></label>
+										<input type="radio" id="star3" name="rating" value="3" />
+									<label class="full" for="star3" title="Meh - 3 stars"></label>
+									<input
+										type="radio" id="star2half" name="rating" value="2.5" /><label
+										class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+										<input type="radio" id="star2" name="rating" value="2" />
+									<label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+									<input type="radio" id="star1half" name="rating" value="1.5" /><label
+										class="half" for="star1half" title="Meh - 1.5 stars"></label>
+										<input type="radio" id="star1" name="rating" value="1"/>
+									<label class="full" for="star1" title="Sucks big time - 1 star"></label>
+									<input type="radio" id="starhalf" name="rating" value="0.5" /><label
+										class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label> 
+								<% }else{%>
 									<input type="radio" id="star1" name="rating" value="1"/>
 									<label class="full" for="star1" title="Sucks big time - 1 star"></label>
 									<input type="radio" id="star2" name="rating" value="2" />
@@ -201,9 +222,8 @@ fieldset, label {
 									<input type="radio" id="star4" name="rating" value="4" />
 									<label class="full" for="star4" title="Pretty good - 4 stars"> </label>	
 									<input type="radio" id="star5" name="rating" value="5" />
-									<label class="full" for="star5" title="Awesome - 5 stars"> </label>	
-										 <!-- <input type="radio" id="star4half" name="rating" value="4.5" /><label
-										class="half" for="star4half" title="Pretty good - 4.5 stars"></label> -->
+									<%} %>
+
 									
 									<!-- <input type="radio" id="star3half" name="rating" value="3.5" /><label
 										class="half" for="star3half" title="Meh - 3.5 stars"></label> -->
@@ -238,11 +258,13 @@ fieldset, label {
 			%>
 		</table>
 		<h1 style="margin-left: 41.5%;">
-			<input type="button" value="저장하기" href="main.jsp" onclick="alert('저장완료!')">
+			<a href="main.jsp"><input type="button" value="메인으로" ></a>
 			<input type="button" value="뒤로가기" onclick="history.back()">
 		</h1>
 		
 	</div>
+	<a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
+<img src="img/top.png" style="width:50px; height:50px; border-radius: 15px; margin-right: 10px;"/></a>
 	
 		<script>
  		
@@ -316,6 +338,21 @@ fieldset, label {
 		})
 	
 	</script>
+		<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/scroll3.js"></script>
+	<script src="assets/js/scroll2.js"></script>
+	<script src="assets/js/scroll.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="assets/js/jquery.bpopup-0.10.0.min.js"></script>
+	<script src="assets/js/frame.js"></script>
 	
 
 </body>

@@ -197,7 +197,7 @@
 		}
 
 		.container {
-			width: 90% !important;
+			width: 90%  ;
 		}
 
 	}
@@ -223,7 +223,7 @@
 		}
 
 		.container {
-			width: 90% !important;
+			width: 90%  ;
 		}
 
 	}
@@ -1604,14 +1604,14 @@
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
+			-moz-animation: none  ;
+			-webkit-animation: none  ;
+			-ms-animation: none  ;
+			animation: none  ;
+			-moz-transition: none  ;
+			-webkit-transition: none  ;
+			-ms-transition: none  ;
+			transition: none  ;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -1694,14 +1694,14 @@
 
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
+			-moz-animation: none  ;
+			-webkit-animation: none  ;
+			-ms-animation: none  ;
+			animation: none  ;
+			-moz-transition: none  ;
+			-webkit-transition: none  ;
+			-ms-transition: none  ;
+			transition: none  ;
 		}
 	
 
@@ -2082,7 +2082,7 @@
 	button,
 	.button {
 		background-color: #041625;
-		color: #ffffff !important;
+		color: #ffffff;
 	}
 
 		input[type="submit"]:hover,
@@ -2108,7 +2108,7 @@
 		.button.alt {
 			background-color: transparent;
 			-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
-			color: #ffffff !important;
+			color: #ffffff;
 		}
 
 			input[type="submit"].alt:hover,
@@ -2141,7 +2141,7 @@
 		button.special,
 		.button.special {
 			background-color: #062038;
-			color: #ffffff !important;
+			color: #ffffff;
 		}
 
 			input[type="submit"].special:hover,
@@ -2315,7 +2315,7 @@
 			font-family: FontAwesome;
 			font-style: normal;
 			font-weight: normal;
-			text-transform: none !important;
+			text-transform: none  ;
 		}
 
 		.select-wrapper:before {
@@ -2379,7 +2379,7 @@
 				font-family: FontAwesome;
 				font-style: normal;
 				font-weight: normal;
-				text-transform: none !important;
+				text-transform: none;
 			}
 
 			input[type="checkbox"] + label:before,
@@ -2481,23 +2481,23 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: #676d71 !important;
+		color: #676d71;
 	}
 
 	:-moz-placeholder {
-		color: #676d71 !important;
+		color: #676d71;
 	}
 
 	::-moz-placeholder {
-		color: #676d71 !important;
+		color: #676d71;
 	}
 
 	:-ms-input-placeholder {
-		color: #676d71 !important;
+		color: #676d71;
 	}
 
 	.formerize-placeholder {
-		color: #676d71 !important;
+		color: #676d71;
 	}
 
 /* Icon */
@@ -2514,7 +2514,7 @@
 			font-family: FontAwesome;
 			font-style: normal;
 			font-weight: normal;
-			text-transform: none !important;
+			text-transform: none;
 		}
 
 		.icon > .label {
@@ -2732,7 +2732,7 @@
 
 						ul.actions li > * {
 							width: 100%;
-							margin: 0 !important;
+							margin: 0;
 						}
 
 							ul.actions li > *.icon:before {
@@ -2810,7 +2810,7 @@
 		ul.tab-list li a {
 			background: rgba(255, 255, 255, 0.075);
 			border-radius: 4px;
-			color: rgba(255, 255, 255, 0.5) !important;
+			color: rgba(255, 255, 255, 0.5);
 			margin-bottom: .5em;
 			padding: .5em 1em;
 			display: inline-block;
@@ -2819,12 +2819,12 @@
 
 			ul.tab-list li a.active {
 				background: #aa14cc;
-				color: #fff !important;
+				color: #fff;
 			}
 
 			ul.tab-list li a:hover {
 				background: #693dcc;
-				color: #fff !important;
+				color: #fff;
 			}
 
 	.tab {
@@ -3140,7 +3140,7 @@
 			.wrapper.style1 button,
 			.wrapper.style1 .button {
 				background-color: #041625;
-				color: #ffffff !important;
+				color: #ffffff;
 			}
 
 				.wrapper.style1 input[type="submit"]:hover,
@@ -3166,7 +3166,7 @@
 				.wrapper.style1 .button.alt {
 					background-color: transparent;
 					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
-					color: #ffffff !important;
+					color: #ffffff;
 				}
 
 					.wrapper.style1 input[type="submit"].alt:hover,
@@ -3199,7 +3199,7 @@
 				.wrapper.style1 button.special,
 				.wrapper.style1 .button.special {
 					background-color: #ffffff;
-					color: #062038 !important;
+					color: #062038;
 				}
 
 			.wrapper.style1 label {
@@ -3253,23 +3253,23 @@
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
-				color: #9ba6af !important;
+				color: #9ba6af;
 			}
 
 			.wrapper.style1 :-moz-placeholder {
-				color: #9ba6af !important;
+				color: #9ba6af;
 			}
 
 			.wrapper.style1 ::-moz-placeholder {
-				color: #9ba6af !important;
+				color: #9ba6af ;
 			}
 
 			.wrapper.style1 :-ms-input-placeholder {
-				color: #9ba6af !important;
+				color: #9ba6af ;
 			}
 
 			.wrapper.style1 .formerize-placeholder {
-				color: #9ba6af !important;
+				color: #9ba6af ;
 			}
 
 			.wrapper.style1 ul.alt li {
@@ -3352,7 +3352,7 @@
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
 				background-color: #ffffff;
-				color: #041625 !important;
+				color: #041625;
 			}
 
 				.wrapper.style2 input[type="submit"].alt,
@@ -3362,7 +3362,7 @@
 				.wrapper.style2 .button.alt {
 					background-color: transparent;
 					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.15);
-					color: #ffffff !important;
+					color: #ffffff;
 				}
 
 					.wrapper.style2 input[type="submit"].alt:hover,
@@ -3395,7 +3395,7 @@
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
 					background-color: #062038;
-					color: #ffffff !important;
+					color: #ffffff;
 				}
 
 					.wrapper.style2 input[type="submit"].special:hover,
@@ -3465,23 +3465,23 @@
 			}
 
 			.wrapper.style2 ::-webkit-input-placeholder {
-				color: #9ba2a8 !important;
+				color: #9ba2a8;
 			}
 
 			.wrapper.style2 :-moz-placeholder {
-				color: #9ba2a8 !important;
+				color: #9ba2a8;
 			}
 
 			.wrapper.style2 ::-moz-placeholder {
-				color: #9ba2a8 !important;
+				color: #9ba2a8;
 			}
 
 			.wrapper.style2 :-ms-input-placeholder {
-				color: #9ba2a8 !important;
+				color: #9ba2a8;
 			}
 
 			.wrapper.style2 .formerize-placeholder {
-				color: #9ba2a8 !important;
+				color: #9ba2a8;
 			}
 
 			.wrapper.style2 ul.alt li {
@@ -3697,7 +3697,7 @@
 					font-family: FontAwesome;
 					font-style: normal;
 					font-weight: normal;
-					text-transform: none !important;
+					text-transform: none;
 				}
 
 				#header > a[href="#menu"]:before {
@@ -3763,7 +3763,7 @@
 					}
 	
 					#header nav a[href="#menu"] {
-						padding-right: 3.325em !important;
+						padding-right: 3.325em;
 					}
 	
 						#header nav a[href="#menu"]:before, #header nav a[href="#menu"]:after {
@@ -3796,7 +3796,7 @@
 						}
 	
 						#header nav a[href="#menu"]:last-child {
-							padding-right: 3.875em !important;
+							padding-right: 3.875em;
 						}
 	
 							#header nav a[href="#menu"]:last-child:before, #header nav a[href="#menu"]:last-child:after {
@@ -3886,7 +3886,7 @@
 					}
 
 					#menu > ul.links > li:first-child > a:not(.button) {
-						border-top: 0 !important;
+						border-top: 0;
 					}
 
 		#menu .close {
@@ -3918,7 +3918,7 @@
 				font-family: FontAwesome;
 				font-style: normal;
 				font-weight: normal;
-				text-transform: none !important;
+				text-transform: none;
 			}
 
 			#menu .close:before {
@@ -4194,13 +4194,13 @@
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
 				flex-shrink: 1;
-				width: calc(50vw - 15px) !important;
+				width: calc(50vw - 15px)  ;
 				margin: 2.5px;
 				box-shadow: 0 0 0 5px #ffffff;
 			}
 
 				#main1 .item.intro {
-					width: calc(100vw - 20px) !important;
+					width: calc(100vw - 20px)  ;
 					text-align: center;
 					height: auto;
 					padding: 3em;
@@ -4323,7 +4323,7 @@
 				}
 
 				#menu2 ul.links > li:first-child > a:not(.button) {
-					border-top: 0 !important;
+					border-top: 0  ;
 				}
 
 	#menu2 .close {
@@ -4502,7 +4502,7 @@ body.is-menu2-visible #menu2 {
 				}
 
 				#menu3 ul.links > li:first-child > a:not(.button) {
-					border-top: 0 !important;
+					border-top: 0  ;
 				}
 
 	#menu3 .close {
@@ -4613,7 +4613,7 @@ body.is-menu3-visible #menu3 {
 		background-repeat: no-repeat;
 		border-top: 0;
 		min-height: 100vh;
-		height: 100vh !important;
+		height: 100vh  ;
 		position: relative;
 		text-align: center;
 		overflow: hidden;
@@ -4691,7 +4691,7 @@ body.is-menu3-visible #menu3 {
 
 			#banner {
 				min-height: 0;
-				height: auto !important;
+				height: auto  ;
 				padding: 4em 2em;
 			}
 
@@ -4979,13 +4979,13 @@ body.is-menu3-visible #menu3 {
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
 				flex-shrink: 1;
-				width: calc(50vw - 15px) !important;
+				width: calc(50vw - 15px)  ;
 				margin: 2.5px;
 				box-shadow: 0 0 0 5px #ffffff;
 			}
 
 				#main2 .item.intro {
-					width: calc(100vw - 20px) !important;
+					width: calc(100vw - 20px)  ;
 					text-align: center;
 					height: auto;
 					padding: 3em;
@@ -5252,13 +5252,13 @@ body.is-menu3-visible #menu3 {
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
 				flex-shrink: 1;
-				width: calc(50vw - 15px) !important;
+				width: calc(50vw - 15px)  ;
 				margin: 2.5px;
 				box-shadow: 0 0 0 5px #ffffff;
 			}
 
 				#main0 .item.intro {
-					width: calc(100vw - 20px) !important;
+					width: calc(100vw - 20px)  ;
 					text-align: center;
 					height: auto;
 					padding: 3em;
@@ -5523,7 +5523,7 @@ body.is-menu3-visible #menu3 {
 
 		.poptrox-popup .nav-next, .poptrox-popup .nav-previous {
 			text-decoration: none;
-			text-transform: none !important;
+			text-transform: none  ;
 			width: 150px;
 			height: 75px;
 			position: absolute;
@@ -5541,7 +5541,7 @@ body.is-menu3-visible #menu3 {
 				font-variant: normal;
 				text-rendering: auto;
 				line-height: 1;
-				text-transform: none !important;
+				text-transform: none  ;
 				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 			}
@@ -5579,15 +5579,15 @@ body.is-menu3-visible #menu3 {
 			}
 
 				.poptrox-popup .caption {
-					display: none !important;
+					display: none  ;
 				}
 
 				.poptrox-popup .nav-next {
-					display: none !important;
+					display: none  ;
 				}
 
 				.poptrox-popup .nav-previous {
-					display: none !important;
+					display: none  ;
 				}
 
 		}

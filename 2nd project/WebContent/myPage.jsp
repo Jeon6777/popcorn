@@ -35,7 +35,8 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">메인</a></li>
-			<li><a href="Taste.jsp">평가하기</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
+			<li><a href="starRating.jsp">평가하기</a></li>
 		</ul>
 	</nav>
 
@@ -205,7 +206,7 @@
 </footer>
 </section>
 <a href="#" title="Back to Top" style="display:scroll;position:fixed;bottom:30px;right:10px; z-index: 10003;" onfocus='this.blur()'>
-<img src="img/top.png" style="width:100px; height:100px; border-radius: 15px;"/></a>
+<img src="img/top.png" style="width:50px; height:50px; border-radius: 15px;margin-right: 10px;"/></a>
 	<!-- Scripts -->
 	<script src="assets/js/scroll.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
