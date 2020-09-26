@@ -131,6 +131,7 @@
   color: #8f8f8f;
 }
 
+
 </style>
 </head>
 <body class="is-preload">
@@ -170,6 +171,7 @@
 			if(info.getId().equals("admin")){ %>
 			<li><a href="main.jsp">메인</a></li>
 			<li><a href="admin.jsp">관리자 모드</a></li>
+			<li><a href="starRating.jsp">평가하기</a></li>
 			
 			
 		<%}else{%>

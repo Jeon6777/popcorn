@@ -113,6 +113,16 @@ select * from MOVIE_MEMBER;
 select * from MOVIE_GRADE;
 select * from MOVIE_NOTE;
 
+insert into screen(movie_no, movienm) values(1,'1');
+insert into screen(movie_no, movienm) values(2,'1');
+insert into screen(movie_no, movienm) values(3,'1');
+insert into screen(movie_no, movienm) values(4,'1');
+insert into screen(movie_no, movienm) values(5,'1');
+insert into screen(movie_no, movienm) values(6,'1');
+insert into screen(movie_no, movienm) values(7,'1');
+insert into screen(movie_no, movienm) values(8,'1');
+insert into screen(movie_no, movienm) values(9,'1');
+insert into screen(movie_no, movienm) values(10,'1');
 
 --불 필요한 데이터 삭제 (사진을 못불러옴)
 delete from movie where movieNm like '%극장판%';

@@ -59,6 +59,64 @@ fieldset, label {
 	margin: 0;
 	padding: 0;
 }
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #ffe593;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #ffe593;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.6rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
 /* fieldset[class *="rating"] */
 /****** Style Star Rating Widget *****/
 
@@ -85,6 +143,17 @@ fieldset, label {
   color: #ddd; 
  float: right; 
 } 
+#header > h1 {
+    color: #ffffff;
+    display: inline-block;
+    height: inherit;
+    left: 1.25em;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
@@ -122,10 +191,10 @@ fieldset, label {
 .rating1 > label { 
   color: #ddd; 
  float: right; 
-}
+}*/
 
 /***** CSS Magic to Highlight Stars on Hover *****/
-
+/*
 .rating1 > input:checked ~ label, /* show gold star when clicked */
 .rating1:not(:checked) > label:hover, /* hover current star */
 .rating1:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
@@ -142,17 +211,60 @@ fieldset, label {
 
 	<%
 		MovieDAO dao = new MovieDAO();
-	ArrayList<MovieDTO> list = dao.allMovie("movie");
+		ArrayList<MovieDTO> list = dao.allMovie("movie");
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-	<header>
-		<h1 style="text-align: center; color: white; font-size: 50px;">영화에
+	<header id="header" class="alt">
+		<h1>
+			<a href="main.jsp" style="display:scroll;position:fixed;">pop <span>('corn')</span></a>
+		</h1>
+<%-- 		<%
+			if (info == null) {
+		%>
+		<a href="#menu2">로그인</a> <a href="#menu3">회원가입</a>
+		<%
+			} else {
+		%>
+		<a href="LogoutService.do">로그아웃</a>
+		<%
+			}
+		%>
+		<a href="#menu">Menu</a> --%>
+	
+		<!-- Nav -->
+<%-- 	<nav id="menu">
+		<ul class="links">
+		
+		<%
+		if(info == null){%>
+			
+			<li><a href="#menu2">로그인을 해주세요</a></li>
+		
+		<%}else{
+			
+			if(info.getId().equals("admin")){ %>
+			<li><a href="main.jsp">메인</a></li>
+			<li><a href="admin.jsp">관리자 모드</a></li>
+			<li><a href="starRating.jsp">평가하기</a></li>
+			
+			
+		<%}else{%>
+			<li><a href="main.jsp">메인</a></li>
+			<li><a href="myPage.jsp">회원정보 수정</a></li>
+			<li><a href="starRating.jsp">평가하기</a></li>
+			<%}
+			}%>
+			
+		</ul>
+		</nav> --%>
+		<br>
+		<br>
+		
+	</header>
+	<h1 style="text-align: center; color: white; font-size: 50px;">영화에
 			평점을 입력하세요!	            
 			<a onClick="window.location.reload()" style="cursor: pointer;"><img src = "images/refresh.png" style="width:50px; height:50px"></a>
 			</h1>
-	</header>
-	
-			<center>
-			</center>
 	<div>
 		<table>
 			<%
@@ -257,9 +369,9 @@ fieldset, label {
 				}
 			%>
 		</table>
-		<h1 style="margin-left: 41.5%;">
-			<a href="main.jsp"><input type="button" value="메인으로" ></a>
-			<input type="button" value="뒤로가기" onclick="history.back()">
+		<h1 style="margin-left: 38.2%;">
+			<button class="btn draw-border" onclick="location.href='main.jsp'" style="margin-right: 40px;">메인으로</button>
+			<button class="btn draw-border" onclick="history.back()" style="margin-left: 40px;">뒤로가기</button>
 		</h1>
 		
 	</div>

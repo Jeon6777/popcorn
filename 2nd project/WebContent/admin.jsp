@@ -45,7 +45,8 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="main.jsp">Home</a></li>
-			<li><a href="elements.jsp">관리자 Mode</a></li>
+			<li><a href="admin.jsp">관리자 Mode</a></li>
+			<li><a href="starRating.jsp">평가하기</a></li>
 		</ul>
 	</nav>
 
