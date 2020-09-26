@@ -12,48 +12,70 @@ drop sequence note_seq;
 -- 테이블 생성
 -- 영화 테이블 생성
 create table movie(
-movie_no number primary key,
-movieNm varchar2(100),
-director varchar2(50),
-genre varchar2(100),
+movie_no number,
+movieNm varchar2(200) not null,
+director varchar2(100),
+genre varchar2(150),
 actor varchar2(150),
 openDt varchar2(50),
-img varchar2(500)
+img varchar2(500),
+constraint movie_pk primary key(movie_no),
+constraint movie_uq unique(movieNm)
 );
 
 -- 상영작 테이블 생성
 create table screen(
-movie_no number primary key,
-movieNm varchar2(100),
-director varchar2(50),
-genre varchar2(100),
+movie_no number,
+movieNm varchar2(200) not null,
+director varchar2(100),
+genre varchar2(150),
 actor varchar2(150),
 openDt varchar2(50),
-img varchar2(500)
+img varchar2(500),
+constraint screen_pk primary key(movie_no),
+constraint movie_screen_name_fk1 foreign key(movieNm) references movie(movieNm)
+);
+
+create table comeoutmovie(
+movie_no number,
+movieNm varchar2(200) not null,
+director varchar2(100),
+genre varchar2(150),
+actor varchar2(150),
+openDt varchar2(50),
+img varchar2(500),
+constraint comeoutmovie_pk primary key(movie_no)
 );
 
 -- 회원 테이블 생성
 create table movie_member(
-id varchar2(50) primary key,
-pw varchar2(50),
+id varchar2(50),
+pw varchar2(50) not null,
 nick varchar2(50),
-genre varchar2(100)
+genre varchar2(200),
+constraint movie_member_id_pk primary key(id)
 );
 
 -- 평점 테이블 생성
 create table movie_grade(
-grade_no number primary key,
-id varchar2(50),
-movienm varchar2(100),
-grade number
+grade_no number,
+id varchar2(50) not null,
+movienm varchar2(200) not null,
+grade number,
+constraint movie_grade_no_pk primary key(grade_no),
+constraint mem_grade_id_fk1 foreign key(id) references movie_member(id),
+constraint movie_grade_movienm_fk2 foreign key(movienm) references movie(movienm)
 );
 
--- 영화 테이블 생성
+-- 영화 한줄평 생성
 create table movie_note(
-note_no number primary key,
+note_no number,
 id varchar2(50),
-movienm varchar2(100),
-note varchar2(500)
+movienm varchar2(200),
+note varchar2(500),
+constraint movie_note_no_pk primary key(note_no),
+constraint mem_note_id_fk1 foreign key(id) references movie_member(id),
+constraint movie_note_movienm_fk2 foreign key(movienm) references movie(movienm)
 );
 
 -- 영화 시퀀스 생성
@@ -66,6 +88,11 @@ CREATE SEQUENCE screen_seq
 START WITH 1
 INCREMENT BY 1;
 
+-- 개봉예정작 시퀀스 생성
+CREATE SEQUENCE comeoutmovie_seq
+START WITH 1
+INCREMENT BY 1;
+
 -- 평점 시퀀스 생성
 CREATE SEQUENCE grade_seq
 START WITH 1
@@ -75,6 +102,7 @@ INCREMENT BY 1;
 CREATE SEQUENCE note_seq
 START WITH 1
 INCREMENT BY 1;
+
 
 --상영작
 select * from screen;

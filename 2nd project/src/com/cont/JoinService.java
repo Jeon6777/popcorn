@@ -27,10 +27,12 @@ public class JoinService implements Command{
 				String nick = request.getParameter("nick");
 				String[] genre = request.getParameterValues("genre");
 				String genres = "";
-				for (int i = 0; i < genre.length; i++) {
-					genres += genre[i];
-					if(i < genre.length-1) {
-						genres += "|";				
+				if(genres!=null) {
+					for (int i = 0; i < genre.length; i++) {
+						genres += genre[i];
+						if(i < genre.length-1) {
+							genres += "|";				
+						}
 					}
 				}
 				System.out.println("id : "+ id);
