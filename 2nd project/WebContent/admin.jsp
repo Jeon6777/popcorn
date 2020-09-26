@@ -55,7 +55,7 @@
 		<div id="main">
 			<div class="inner">
 				<header class="align-center">
-					<h2 class="h2_1">包府磊 Mode</h2>
+					<h2 class="h2_1">包府磊</h2>
 
 				</header>
 
