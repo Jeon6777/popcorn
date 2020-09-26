@@ -276,6 +276,7 @@
 			<!-- Main -->
 			
 			<% 
+			
 			MovieDAO dao = new MovieDAO();
 			ArrayList<String> list = dao.movieNmAll("screen");
 			ArrayList<String> list1 = dao.movieNmAll("movie");
@@ -290,18 +291,26 @@
 				<div class="items">
 					<%				
 				
-
+					String print = "";
 						Random rd = new Random();
 					int c = rd.nextInt(400);
 					%>
 					<%
 						for (int i = 0; i < list.size(); i++) {
+							if (list1.get(c).contains(":")) {
+								String[] spl = list1.get(c).split(":");
+								print = spl[0].trim();
+								System.out.println(print);
+							} else {
+								print = list1.get(c);
+								System.out.println(print);
+							}
 					%>
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
 						<h2 class="h2"><%=list1.get(c)%></h2>
-						<a href="img/<%=list1.get(c)%>.jpg" class="image2"><img
-							class="img" src="img/<%=list1.get(c)%>.jpg" alt=""></a>
+						<a href="img/<%=print%>.jpg" class="image2"><img
+							class="img" src="img/<%=print%>.jpg" alt=""></a>
 					</article>
 					<%
 						c = rd.nextInt(400);
@@ -337,8 +346,20 @@
 					<h1 style="text-align: center"></h1>
 
 					<%
+					String print = "";
+
 						int a = 0;
 					for (int i = 0; i < list.size(); i++) {
+						
+						if (list.get(a).contains(":")) {
+						String[] spl = list.get(a).split(":");
+						print = spl[0].trim();
+						System.out.println(print);
+					} else {
+						print = list.get(a);
+						System.out.println(print);
+					}
+					
 					%>
 					<article class="item thumb span-1"
 						style="width: 280px; height: 400px;">
@@ -348,33 +369,33 @@
 				<div class="element_to_pop_up<%=i%>">
 					<a class="b-close">X</a>
 					<iframe width="1280" height="720"
-						<%if(list.get(i).contains("다만 악에서 구하소서")){ %>
-						src="https://www.youtube.com/embed/7oKAPbnl7mQ"
-						<%}else if(list.get(i).contains("오! 문희")){ %>
+						<%if(print.contains("디바")){ %>
+						src="https://www.youtube.com/embed/I5te-yJTkhU"
+						<%}else if(print.contains("오! 문희")){ %>
 						src="https://www.youtube.com/embed/tecLzQwIoMI?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("기기괴괴")){ %>
-						src="https://www.youtube.com/embed/DNb9QP5kilE?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("결백")){ %>
-						src="https://www.youtube.com/embed/5QWeKTO9NpY?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("남매의 여름밤")){ %>
-						src="https://www.youtube.com/embed/J20a-ws8wE0?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("오케이 마담")){ %>
-						src="https://www.youtube.com/embed/Cpzns_3BWII?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("카일라스 가는 길")){ %>
-						src="https://www.youtube.com/embed/29H83sX99Bc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("후쿠오카")){ %>
-						src="https://www.youtube.com/embed/HpDPuNVG1no?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("나를 구하지 마세요")){ %>
-						src="https://www.youtube.com/embed/1zvoSWKKkhQ?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
-						<%}else if(list.get(i).contains("메피스토")){ %>
-						src="https://www.youtube.com/embed/qXQMgjyQpIc?list=TLPQMjIwOTIwMjC8TZu7qX40Tg"
+						<%}else if(print.contains("검객")){ %>
+						src="https://www.youtube.com/embed/murHQPp1ao4"
+						<%}else if(print.contains("브레이크 더 사일런스")){ %>
+						src="https://www.youtube.com/embed/AWqu72jRQyk"
+						<%}else if(print.contains("죽지않는 인간들의 밤")){ %>
+						src="https://www.youtube.com/embed/wGhI0XnQP_A"
+						<%}else if(print.contains("강철비2")){ %>
+						src="https://www.youtube.com/embed/KKPUEANoHAo"
+						<%}else if(print.contains("다시 만난 날들")){ %>
+						src="https://www.youtube.com/embed/0ImV-4iIUpc?list=TLPQMjYwOTIwMjB9hxYWIyKKgw"
+						<%}else if(print.contains("국제수사")){ %>
+						src="https://www.youtube.com/embed/PTY1dTU0xTM?list=TLPQMjYwOTIwMjB9hxYWIyKKgw"
+						<%}else if(print.contains("반도")){ %>
+						src="https://www.youtube.com/embed/fcueArgm800?list=TLPQMjYwOTIwMjB9hxYWIyKKgw"
+						<%}else if(print.contains("매지컬")){ %>
+						src="https://www.youtube.com/embed/GoTDw3XLyG8?list=TLPQMjYwOTIwMjB9hxYWIyKKgw"
 						<%}%> frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
 				</div>
 						</h2>
-						<a href="img/<%=list.get(i)%>.jpg" class="image2"> <img
-							class="img" src="img/<%=list.get(a)%>.jpg" alt="">
+						<a href="img/<%=print%>.jpg" class="image2"> <img
+							class="img" src="img/<%=print%>.jpg" alt="">
 						</a>
 					</article>
 					<%

@@ -127,20 +127,27 @@
 						<h1 style="text-align: center"></h1>
 
 						<%
+						String print = "";
 							int a = 0;
 						for (int i = 0; i < list.size(); i++) {
+							
+							if (list.get(i).contains(":")) {
+								String[] spl = list.get(i).split(":");
+								print = spl[0].trim();
+								System.out.println(print);
+							} else {
+								print = list.get(i);
+								System.out.println(print);
+							}
 						%>
 						<article class="item thumb span-1"
 							style="width: 280px; height: 400px;">
-							<h2 class="h2"><%=list.get(a)%></h2>
-							<a href="img/<%=list.get(a)%>.jpg" class="image2"> <img
-								class="img" src="img/<%=list.get(a)%>.jpg" alt="">
+							<h2 class="h2"><%=list.get(i)%></h2>
+							<a href="img/<%=print%>.jpg" class="image2"> <img
+								class="img" src="img/<%=print%>.jpg" alt="">
 							</a>
 						</article>
 						<%
-							if (a < list.size()) {
-							a++;
-						}
 						}
 						%>
 					</div>
